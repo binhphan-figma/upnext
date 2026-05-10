@@ -107,6 +107,7 @@ Public/product pages:
 - `/auth/login`, `/auth/register`, `/auth/onboarding` — account access and role onboarding prototypes.
 - `/for-candidates`, `/for-employers`, `/faq` — public conversion and explanation pages.
 - `/sitemap.xml` and `/robots.txt` — technical SEO discovery and private-route indexing rules.
+- `/offline` and `/sw.js` — safe PWA offline fallback for public pages only.
 - `/jobs` and `/jobs/frontend-intern-react` — SEO-ready job discovery/detail flow.
 - `/companies` and `/companies/novatech-labs` — company discovery/profile flow.
 - `/blog` and `/blog/junior-developer-cv-checklist` — SEO/GEO career content.
