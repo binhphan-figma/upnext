@@ -24,8 +24,8 @@ export default function PrototypeIndexPage() {
       icon={LayoutDashboard}
       title="Enterprise-grade UI map for the UpNext graduation demo."
       description="This prototype prioritizes polished UX, clear product storytelling, and complete demo coverage over deep backend implementation. Each screen is built to explain user value, AI transparency, and human decision control."
-      primaryAction={{ href: "/candidate/cv", label: "Start with AI CV flow" }}
-      secondaryAction={{ href: "/recruiter/applicants", label: "Review recruiter flow" }}
+      primaryAction={{ href: "/demo", label: "Start guided demo" }}
+      secondaryAction={{ href: "/ai-transparency", label: "AI transparency" }}
     >
       <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
         <SurfaceCard className="bg-slate-950 text-white">
@@ -39,7 +39,8 @@ export default function PrototypeIndexPage() {
               "AI outputs are structured into score, evidence, risks, limitations, and human review.",
               "Dashboards use metrics, queues, timelines, and explainable states instead of decorative charts.",
               "Public pages support SEO/GEO with scannable content, entities, FAQs, and internal links.",
-              "Reusable design-system patterns keep spacing, status states, and card hierarchy consistent."
+              "Reusable design-system patterns keep spacing, status states, and card hierarchy consistent.",
+              "Trust, privacy, and AI safety are visible product surfaces, not hidden documentation."
             ].map((principle) => (
               <div
                 key={principle}
@@ -105,7 +106,9 @@ export default function PrototypeIndexPage() {
               "Recruiter decision support",
               "Admin trust operations",
               "SEO/GEO content",
-              "Responsive SaaS UI"
+              "Responsive SaaS UI",
+              "Trust center",
+              "Guided defense demo"
             ]}
             tone="emerald"
           />

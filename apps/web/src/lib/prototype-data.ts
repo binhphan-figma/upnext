@@ -16,6 +16,28 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/demo",
+    title: "Guided demo script",
+    description:
+      "Defense-ready walkthrough that explains product value, routes, and talking points.",
+    owner: "Public",
+    status: "Ready for demo"
+  },
+  {
+    href: "/trust",
+    title: "Trust center",
+    description: "Privacy, security, AI consent, and human decision-control principles.",
+    owner: "Public",
+    status: "Ready for demo"
+  },
+  {
+    href: "/ai-transparency",
+    title: "AI transparency",
+    description: "How UpNext uses AI safely for coaching, summarization, and decision support.",
+    owner: "Public",
+    status: "Ready for demo"
+  },
+  {
     href: "/candidate/profile",
     title: "Candidate profile",
     description: "Structured profile, skills, project evidence, links, and job preferences.",
@@ -362,3 +384,91 @@ export const applicantDetail = {
     "Ask what accessibility improvements they would add."
   ]
 };
+
+export const demoWalkthrough = [
+  {
+    step: "01",
+    title: "Start with product positioning",
+    route: "/",
+    talkingPoint:
+      "UpNext is not a generic job board. It is a skills-based IT recruitment platform where AI assists candidates and recruiters."
+  },
+  {
+    step: "02",
+    title: "Show complete prototype map",
+    route: "/prototype",
+    talkingPoint:
+      "The project is prototype-first now: every major role has polished pages, clear goals, and reusable enterprise patterns."
+  },
+  {
+    step: "03",
+    title: "Candidate coaching story",
+    route: "/candidate/cv",
+    talkingPoint:
+      "AI gives constructive CV feedback, limitations, and next actions. It never becomes an automatic hiring decision."
+  },
+  {
+    step: "04",
+    title: "Recruiter decision support",
+    route: "/recruiter/applicants/nguyen-minh-anh",
+    talkingPoint:
+      "Recruiters see evidence, risks, and interview questions, but final status changes remain manual and auditable."
+  },
+  {
+    step: "05",
+    title: "Trust, privacy, and AI ethics",
+    route: "/trust",
+    talkingPoint:
+      "The defense should emphasize consent, data minimization, RBAC, AI logs, and human-in-the-loop workflow."
+  }
+];
+
+export const aiTransparencyPrinciples = [
+  {
+    title: "AI is a copilot, not a judge",
+    detail:
+      "UpNext uses AI to summarize, explain, coach, and suggest interview questions. It never auto-rejects candidates."
+  },
+  {
+    title: "Every score needs evidence",
+    detail:
+      "Match scores are paired with matched skills, missing signals, confidence, limitations, and CV/JD evidence."
+  },
+  {
+    title: "Prompt and model usage should be logged",
+    detail:
+      "Production AI outputs should store prompt version, provider, timestamp, confidence, warnings, and fallback status."
+  },
+  {
+    title: "Sensitive data should be minimized",
+    detail:
+      "AI requests should avoid unnecessary personal information and require consent before CV or interview analysis."
+  }
+];
+
+export const trustCenterSections = [
+  {
+    title: "Privacy",
+    items: [
+      "AI consent before CV analysis",
+      "Data deletion request concept",
+      "Private dashboard pages are noindex"
+    ]
+  },
+  {
+    title: "Security",
+    items: ["RBAC permissions", "Protected API routes", "Audit logs for recruiter/admin actions"]
+  },
+  {
+    title: "Fairness",
+    items: [
+      "No emotion or face analysis",
+      "No sensitive-attribute inference",
+      "Human review required"
+    ]
+  },
+  {
+    title: "Operational quality",
+    items: ["Admin reports queue", "AI usage logs", "Skill taxonomy governance"]
+  }
+];
