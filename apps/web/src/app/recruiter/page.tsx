@@ -8,11 +8,20 @@ import {
   jobs,
   recruiterPipeline
 } from "@upnext/domain";
-import { Bot, BriefcaseBusiness, MessageSquareText, UsersRound } from "lucide-react";
+import {
+  Bot,
+  BriefcaseBusiness,
+  Building2,
+  FilePenLine,
+  MessageSquareText,
+  UsersRound
+} from "lucide-react";
 import { Badge } from "@/components/badge";
 import { PageShell } from "@/components/page-shell";
+import { EnterpriseCallout } from "@/components/prototype-card";
 import { ScoreRing } from "@/components/score-ring";
 import { StatusChip } from "@/components/status-chip";
+import { WorkspaceLinkGrid, type WorkspaceLink } from "@/components/workspace-link-grid";
 
 export const metadata: Metadata = {
   title: "Recruiter Dashboard",
@@ -29,12 +38,40 @@ export default function RecruiterDashboardPage() {
   const featuredJob = featuredApplication ? getApplicationJob(featuredApplication) : jobs[0];
   const featuredMatch = featuredJob ? createMatchExplanation(featuredJob) : undefined;
   const recruiterUser = demoUsers.find((user) => user.role === "recruiter");
+  const recruiterLinks: WorkspaceLink[] = [
+    {
+      href: "/recruiter/company",
+      title: "Company",
+      description: "Employer profile, verification, culture, and stack.",
+      icon: Building2
+    },
+    {
+      href: "/recruiter/jobs",
+      title: "Jobs",
+      description: "Published roles, deadlines, applicants, and fit signals.",
+      icon: BriefcaseBusiness
+    },
+    {
+      href: "/recruiter/jobs/new",
+      title: "JD builder",
+      description: "Structured, fair, skills-based job posting.",
+      icon: FilePenLine
+    },
+    {
+      href: "/recruiter/applicants",
+      title: "Applicants",
+      description: "Explainable AI support with manual decision control.",
+      icon: UsersRound
+    }
+  ];
 
   return (
     <PageShell>
       <section className="px-6 py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <Badge icon={BriefcaseBusiness}>Recruiter workspace</Badge>
+          <WorkspaceLinkGrid links={recruiterLinks} />
+
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_380px]">
             <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-card">
               <h1 className="text-4xl font-semibold tracking-tight text-ink-900">
@@ -45,9 +82,12 @@ export default function RecruiterDashboardPage() {
                 audit history and company-scoped permissions.
               </p>
               {recruiterUser ? (
-                <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm leading-6 text-brand-700">
-                  Signed in as {recruiterUser.email}. Permissions:{" "}
-                  {getPermissionsForRole(recruiterUser.role).join(", ")}.
+                <div className="mt-5">
+                  <EnterpriseCallout
+                    title={`Demo signed in as ${recruiterUser.email}`}
+                    description={`Permissions: ${getPermissionsForRole(recruiterUser.role).join(", ")}.`}
+                    tone="blue"
+                  />
                 </div>
               ) : null}
               <div className="mt-8 grid gap-4 md:grid-cols-4">

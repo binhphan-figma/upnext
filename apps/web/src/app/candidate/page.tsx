@@ -9,11 +9,23 @@ import {
   getApplicationJob,
   getPermissionsForRole
 } from "@upnext/domain";
-import { ArrowRight, BookOpenCheck, FileText, Target, Video } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpenCheck,
+  BookmarkCheck,
+  ClipboardList,
+  FileSearch,
+  FileText,
+  Target,
+  UserRound,
+  Video
+} from "lucide-react";
 import { Badge } from "@/components/badge";
 import { PageShell } from "@/components/page-shell";
+import { EnterpriseCallout } from "@/components/prototype-card";
 import { ScoreRing } from "@/components/score-ring";
 import { StatusChip } from "@/components/status-chip";
+import { WorkspaceLinkGrid, type WorkspaceLink } from "@/components/workspace-link-grid";
 
 export const metadata: Metadata = {
   title: "Candidate Dashboard",
@@ -30,12 +42,40 @@ export default function CandidateDashboardPage() {
   const primaryJob = primaryApplication ? getApplicationJob(primaryApplication) : undefined;
   const match = primaryJob ? createMatchExplanation(primaryJob) : undefined;
   const candidateUser = demoUsers.find((user) => user.role === "candidate");
+  const candidateLinks: WorkspaceLink[] = [
+    {
+      href: "/candidate/profile",
+      title: "Profile",
+      description: "Skills, projects, links, preferences, and proof.",
+      icon: UserRound
+    },
+    {
+      href: "/candidate/cv",
+      title: "AI CV analysis",
+      description: "Consent-first feedback and improvement plan.",
+      icon: FileSearch
+    },
+    {
+      href: "/candidate/applications",
+      title: "Applications",
+      description: "Track statuses and next best actions.",
+      icon: ClipboardList
+    },
+    {
+      href: "/candidate/saved-jobs",
+      title: "Saved jobs",
+      description: "Compare fit before applying.",
+      icon: BookmarkCheck
+    }
+  ];
 
   return (
     <PageShell>
       <section className="px-6 py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <Badge icon={FileText}>Candidate workspace</Badge>
+          <WorkspaceLinkGrid links={candidateLinks} />
+
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_360px]">
             <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-card">
               <p className="text-sm font-medium text-brand-700">Welcome back</p>
@@ -47,9 +87,12 @@ export default function CandidateDashboardPage() {
                 evidence before applying to more frontend roles.
               </p>
               {candidateUser ? (
-                <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm leading-6 text-brand-700">
-                  Signed in as {candidateUser.email}. Permissions:{" "}
-                  {getPermissionsForRole(candidateUser.role).join(", ")}.
+                <div className="mt-5">
+                  <EnterpriseCallout
+                    title={`Demo signed in as ${candidateUser.email}`}
+                    description={`Permissions: ${getPermissionsForRole(candidateUser.role).join(", ")}.`}
+                    tone="blue"
+                  />
                 </div>
               ) : null}
               <div className="mt-8 grid gap-4 md:grid-cols-3">

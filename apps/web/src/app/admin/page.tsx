@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { adminQualitySignals, demoUsers, getPermissionsForRole } from "@upnext/domain";
-import { Activity, FileWarning, ShieldCheck, Tags } from "lucide-react";
+import { Activity, FileWarning, Newspaper, ShieldCheck, Tags, UsersRound } from "lucide-react";
 import { Badge } from "@/components/badge";
 import { PageShell } from "@/components/page-shell";
+import { EnterpriseCallout } from "@/components/prototype-card";
+import { WorkspaceLinkGrid, type WorkspaceLink } from "@/components/workspace-link-grid";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
@@ -38,12 +40,40 @@ const adminQueues = [
 
 export default function AdminDashboardPage() {
   const adminUser = demoUsers.find((user) => user.role === "admin");
+  const adminLinks: WorkspaceLink[] = [
+    {
+      href: "/admin/users",
+      title: "Users",
+      description: "Role-aware account and permission governance.",
+      icon: UsersRound
+    },
+    {
+      href: "/admin/reports",
+      title: "Reports",
+      description: "Trust, safety, moderation, and verification queues.",
+      icon: FileWarning
+    },
+    {
+      href: "/admin/content",
+      title: "Content",
+      description: "SEO/GEO editorial operations and quality review.",
+      icon: Newspaper
+    },
+    {
+      href: "/admin/ai-logs",
+      title: "AI logs",
+      description: "Provider, prompt version, confidence, and fallback status.",
+      icon: Activity
+    }
+  ];
 
   return (
     <PageShell>
       <section className="px-6 py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <Badge icon={ShieldCheck}>Admin quality control</Badge>
+          <WorkspaceLinkGrid links={adminLinks} />
+
           <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-card">
             <h1 className="text-4xl font-semibold tracking-tight text-ink-900">
               Platform operations
@@ -53,9 +83,12 @@ export default function AdminDashboardPage() {
               starter view defines the operational areas the graduation demo should explain clearly.
             </p>
             {adminUser ? (
-              <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm leading-6 text-brand-700">
-                Signed in as {adminUser.email}. Permissions:{" "}
-                {getPermissionsForRole(adminUser.role).join(", ")}.
+              <div className="mt-5">
+                <EnterpriseCallout
+                  title={`Demo signed in as ${adminUser.email}`}
+                  description={`Permissions: ${getPermissionsForRole(adminUser.role).join(", ")}.`}
+                  tone="blue"
+                />
               </div>
             ) : null}
             <div className="mt-8 grid gap-4 md:grid-cols-4">

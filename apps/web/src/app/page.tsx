@@ -74,17 +74,17 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="#mvp"
+                  href="/prototype"
                   className="inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
                 >
-                  Explore MVP scope
+                  Explore UI prototype
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link
-                  href="#ai-workflow"
+                  href="/candidate/cv"
                   className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-ink-700 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-100 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
                 >
-                  View AI workflow
+                  View AI CV flow
                 </Link>
               </div>
               <dl className="mt-10 grid max-w-2xl grid-cols-3 gap-3">
@@ -92,6 +92,13 @@ export default function HomePage() {
                 <MetricCard label="MVP modules" value="15" />
                 <MetricCard label="Auto-reject" value="0" />
               </dl>
+              <div className="mt-6 rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
+                <p className="text-sm font-semibold text-ink-900">Prototype-first direction</p>
+                <p className="mt-2 text-sm leading-6 text-ink-500">
+                  The current build emphasizes polished enterprise UI screens and defense-ready
+                  product storytelling before deeper backend implementation.
+                </p>
+              </div>
             </div>
 
             <div className="rounded-[2rem] border border-white/70 bg-white/80 p-4 shadow-soft backdrop-blur">

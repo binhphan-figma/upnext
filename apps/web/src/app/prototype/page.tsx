@@ -38,7 +38,8 @@ export default function PrototypeIndexPage() {
               "Every screen has one primary user goal and clear next action.",
               "AI outputs are structured into score, evidence, risks, limitations, and human review.",
               "Dashboards use metrics, queues, timelines, and explainable states instead of decorative charts.",
-              "Public pages support SEO/GEO with scannable content, entities, FAQs, and internal links."
+              "Public pages support SEO/GEO with scannable content, entities, FAQs, and internal links.",
+              "Reusable design-system patterns keep spacing, status states, and card hierarchy consistent."
             ].map((principle) => (
               <div
                 key={principle}
@@ -109,6 +110,12 @@ export default function PrototypeIndexPage() {
             tone="emerald"
           />
         </div>
+        <Link
+          href="/design-system"
+          className="mt-6 inline-flex rounded-full bg-ink-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
+        >
+          View design system
+        </Link>
       </SurfaceCard>
     </PrototypeShell>
   );

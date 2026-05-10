@@ -61,6 +61,7 @@ pnpm db:validate   # validate Prisma schema
 Prototype command center:
 
 - `/prototype` — clickable enterprise UI prototype sitemap.
+- `/design-system` — reusable UI pattern inventory for enterprise polish.
 
 Candidate prototype pages:
 
