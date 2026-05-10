@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import {
   applications,
   createMatchExplanation,
+  demoUsers,
   getApplicationJob,
+  getPermissionsForRole,
   jobs,
   recruiterPipeline
 } from "@upnext/domain";
@@ -26,6 +28,7 @@ export default function RecruiterDashboardPage() {
   const featuredApplication = applications[0];
   const featuredJob = featuredApplication ? getApplicationJob(featuredApplication) : jobs[0];
   const featuredMatch = featuredJob ? createMatchExplanation(featuredJob) : undefined;
+  const recruiterUser = demoUsers.find((user) => user.role === "recruiter");
 
   return (
     <PageShell>
@@ -41,6 +44,12 @@ export default function RecruiterDashboardPage() {
                 Recruiters see AI summaries, but every status update remains a human action with
                 audit history and company-scoped permissions.
               </p>
+              {recruiterUser ? (
+                <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm leading-6 text-brand-700">
+                  Signed in as {recruiterUser.email}. Permissions:{" "}
+                  {getPermissionsForRole(recruiterUser.role).join(", ")}.
+                </div>
+              ) : null}
               <div className="mt-8 grid gap-4 md:grid-cols-4">
                 {recruiterPipeline.map((item) => (
                   <div key={item.status} className="rounded-2xl bg-slate-50 p-5">

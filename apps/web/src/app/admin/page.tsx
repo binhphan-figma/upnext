@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { adminQualitySignals } from "@upnext/domain";
+import { adminQualitySignals, demoUsers, getPermissionsForRole } from "@upnext/domain";
 import { Activity, FileWarning, ShieldCheck, Tags } from "lucide-react";
 import { Badge } from "@/components/badge";
 import { PageShell } from "@/components/page-shell";
@@ -37,6 +37,8 @@ const adminQueues = [
 ];
 
 export default function AdminDashboardPage() {
+  const adminUser = demoUsers.find((user) => user.role === "admin");
+
   return (
     <PageShell>
       <section className="px-6 py-12 lg:px-8">
@@ -50,6 +52,12 @@ export default function AdminDashboardPage() {
               The admin dashboard protects data quality, content quality, and AI transparency. This
               starter view defines the operational areas the graduation demo should explain clearly.
             </p>
+            {adminUser ? (
+              <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm leading-6 text-brand-700">
+                Signed in as {adminUser.email}. Permissions:{" "}
+                {getPermissionsForRole(adminUser.role).join(", ")}.
+              </div>
+            ) : null}
             <div className="mt-8 grid gap-4 md:grid-cols-4">
               {adminQualitySignals.map((signal) => (
                 <div key={signal.label} className="rounded-2xl bg-slate-50 p-5">

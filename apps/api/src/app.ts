@@ -6,6 +6,7 @@ import { requestLogger } from "./common/middleware/request-logger";
 import { env } from "./config/env";
 import { aiRouter } from "./modules/ai/ai.routes";
 import { applicationsRouter } from "./modules/applications/applications.routes";
+import { authRouter } from "./modules/auth/auth.routes";
 import { healthRouter } from "./modules/health/health.routes";
 import { jobsRouter } from "./modules/jobs/jobs.routes";
 
@@ -18,6 +19,7 @@ export function createApp() {
   app.use(requestLogger);
 
   app.use("/health", healthRouter);
+  app.use("/auth", authRouter);
   app.use("/ai", aiRouter);
   app.use("/jobs", jobsRouter);
   app.use("/applications", applicationsRouter);

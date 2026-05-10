@@ -1,5 +1,17 @@
 export type WorkMode = "onsite" | "hybrid" | "remote";
 export type JobLevel = "Intern" | "Junior" | "Mid";
+export type UserRole = "candidate" | "recruiter" | "admin";
+export type Permission =
+  | "profile:read"
+  | "profile:update"
+  | "jobs:read"
+  | "jobs:write"
+  | "applications:read-own"
+  | "applications:read-company"
+  | "applications:update-status"
+  | "ai:cv-feedback"
+  | "ai:match-preview"
+  | "admin:manage-platform";
 export type ApplicationStatus =
   | "submitted"
   | "under_review"
@@ -52,6 +64,97 @@ export type ApplicationRecord = {
   evidence: string[];
   missingSignals: string[];
 };
+
+export type DemoUser = {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  passwordHint: string;
+  avatarInitials: string;
+  onboardingTasks: string[];
+  dashboardPath: string;
+};
+
+export type AuthSession = {
+  accessToken: string;
+  user: DemoUser;
+  permissions: Permission[];
+};
+
+export const rolePermissions: Record<UserRole, Permission[]> = {
+  candidate: [
+    "profile:read",
+    "profile:update",
+    "jobs:read",
+    "applications:read-own",
+    "ai:cv-feedback"
+  ],
+  recruiter: [
+    "profile:read",
+    "profile:update",
+    "jobs:read",
+    "jobs:write",
+    "applications:read-company",
+    "applications:update-status",
+    "ai:match-preview"
+  ],
+  admin: [
+    "profile:read",
+    "jobs:read",
+    "jobs:write",
+    "applications:read-company",
+    "applications:update-status",
+    "ai:cv-feedback",
+    "ai:match-preview",
+    "admin:manage-platform"
+  ]
+};
+
+export const demoUsers: DemoUser[] = [
+  {
+    id: "user-candidate-demo",
+    email: "candidate@upnext.dev",
+    name: "Nguyen Minh Anh",
+    role: "candidate",
+    passwordHint: "candidate123",
+    avatarInitials: "MA",
+    onboardingTasks: [
+      "Complete profile basics",
+      "Upload CV and confirm AI consent",
+      "Apply to one skills-matched role"
+    ],
+    dashboardPath: "/candidate"
+  },
+  {
+    id: "user-recruiter-demo",
+    email: "recruiter@upnext.dev",
+    name: "Tran Hoang Nam",
+    role: "recruiter",
+    passwordHint: "recruiter123",
+    avatarInitials: "HN",
+    onboardingTasks: [
+      "Verify company profile",
+      "Publish first job post",
+      "Review applicant fit explanations manually"
+    ],
+    dashboardPath: "/recruiter"
+  },
+  {
+    id: "user-admin-demo",
+    email: "admin@upnext.dev",
+    name: "Le Bao Khanh",
+    role: "admin",
+    passwordHint: "admin123",
+    avatarInitials: "BK",
+    onboardingTasks: [
+      "Review pending company reports",
+      "Normalize skill taxonomy aliases",
+      "Audit AI usage logs and prompt versions"
+    ],
+    dashboardPath: "/admin"
+  }
+];
 
 export const candidateSnapshot: CandidateSnapshot = {
   name: "Nguyen Minh Anh",
@@ -219,6 +322,38 @@ export function getJobBySlug(slug: string): UpNextJob | undefined {
 
 export function getApplicationJob(application: ApplicationRecord): UpNextJob | undefined {
   return getJobBySlug(application.jobSlug);
+}
+
+export function getDemoUserByEmail(email: string): DemoUser | undefined {
+  const normalizedEmail = email.trim().toLowerCase();
+
+  return demoUsers.find((user) => user.email === normalizedEmail);
+}
+
+export function getDemoUserById(userId: string): DemoUser | undefined {
+  return demoUsers.find((user) => user.id === userId);
+}
+
+export function getPermissionsForRole(role: UserRole): Permission[] {
+  return rolePermissions[role];
+}
+
+export function hasPermission(role: UserRole, permission: Permission): boolean {
+  return rolePermissions[role].includes(permission);
+}
+
+export function createDemoAccessToken(user: DemoUser): string {
+  return `demo:${user.id}:${user.role}`;
+}
+
+export function getDemoUserFromAccessToken(accessToken: string): DemoUser | undefined {
+  const [prefix, userId] = accessToken.split(":");
+
+  if (prefix !== "demo" || !userId) {
+    return undefined;
+  }
+
+  return getDemoUserById(userId);
 }
 
 export function canTransitionApplicationStatus(

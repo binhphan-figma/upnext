@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const navigation = [
   { href: "/jobs", label: "Jobs" },
+  { href: "/auth", label: "Auth" },
   { href: "/candidate", label: "Candidate" },
   { href: "/recruiter", label: "Recruiter" },
   { href: "/#mvp", label: "MVP" },
