@@ -86,6 +86,7 @@ Candidate prototype pages:
 - `/candidate/applications/frontend-intern-react` — application detail with CV snapshot and recruiter notes.
 - `/candidate/saved-jobs` — saved jobs comparison.
 - `/candidate/interview-coach` — text interview coach with rubric feedback.
+- `/notifications` — candidate notification center for interviews, applications, AI feedback, and learning reminders.
 
 Recruiter prototype pages:
 
@@ -96,6 +97,7 @@ Recruiter prototype pages:
 - `/recruiter/pipeline` — enterprise hiring pipeline board with manual decision controls.
 - `/recruiter/analytics` — funnel quality, fair review, bottleneck, and AI escalation analytics.
 - `/recruiter/interviews/nguyen-minh-anh` — interview scheduling with slots, rubric, and candidate clarity.
+- `/recruiter/messages/nguyen-minh-anh` — internal recruiter notes and safe collaboration thread.
 - `/recruiter/applicants` — human-in-the-loop applicant review.
 - `/recruiter/applicants/nguyen-minh-anh` — applicant detail with AI match evidence and interview plan.
 
