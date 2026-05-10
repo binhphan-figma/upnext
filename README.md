@@ -62,6 +62,8 @@ Prototype command center:
 
 - `/prototype` — clickable enterprise UI prototype sitemap.
 - `/design-system` — reusable UI pattern inventory for enterprise polish.
+- `/notifications` — notification center with actionable alerts and empty state preview.
+- `/account/settings` — privacy, notification, and AI consent settings prototype.
 
 Candidate prototype pages:
 
@@ -69,6 +71,7 @@ Candidate prototype pages:
 - `/candidate/profile` — structured candidate profile and project evidence.
 - `/candidate/cv` — consent-first AI CV analysis UI.
 - `/candidate/applications` — application tracker and next actions.
+- `/candidate/applications/frontend-intern-react` — application detail with CV snapshot and recruiter notes.
 - `/candidate/saved-jobs` — saved jobs comparison.
 - `/candidate/interview-coach` — text interview coach with rubric feedback.
 
@@ -79,6 +82,7 @@ Recruiter prototype pages:
 - `/recruiter/jobs` — job portfolio operations.
 - `/recruiter/jobs/new` — enterprise job editor/JD builder.
 - `/recruiter/applicants` — human-in-the-loop applicant review.
+- `/recruiter/applicants/nguyen-minh-anh` — applicant detail with AI match evidence and interview plan.
 
 Admin prototype pages:
 
@@ -92,6 +96,7 @@ Admin prototype pages:
 Public/product pages:
 
 - `/auth` — demo accounts, roles, permissions, onboarding tasks.
+- `/auth/login`, `/auth/register`, `/auth/onboarding` — account access and role onboarding prototypes.
 - `/jobs` and `/jobs/frontend-intern-react` — SEO-ready job discovery/detail flow.
 - `/companies` and `/companies/novatech-labs` — company discovery/profile flow.
 - `/blog` and `/blog/junior-developer-cv-checklist` — SEO/GEO career content.
