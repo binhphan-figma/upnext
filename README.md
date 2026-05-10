@@ -92,6 +92,7 @@ Recruiter prototype pages:
 
 - `/recruiter` — recruiter dashboard overview.
 - `/recruiter/company` — employer profile and verification signals.
+- `/recruiter/team` — team access, role scopes, and permission matrix.
 - `/recruiter/jobs` — job portfolio operations.
 - `/recruiter/jobs/new` — enterprise job editor/JD builder.
 - `/recruiter/pipeline` — enterprise hiring pipeline board with manual decision controls.
@@ -106,6 +107,7 @@ Admin prototype pages:
 - `/admin` — admin overview.
 - `/admin/users` — role-aware account management.
 - `/admin/reports` — trust and safety queues.
+- `/admin/reports/compensation-clarity` — trust case detail with evidence, timeline, and admin actions.
 - `/admin/skills` — skill taxonomy management.
 - `/admin/content` — SEO/GEO content operations.
 - `/admin/ai-logs` — AI usage/audit logs.

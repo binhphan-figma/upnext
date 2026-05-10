@@ -12,10 +12,10 @@ import {
   Bot,
   BriefcaseBusiness,
   Building2,
+  UsersRound,
   FilePenLine,
   BarChart3,
-  MessageSquareText,
-  UsersRound
+  MessageSquareText
 } from "lucide-react";
 import { Badge } from "@/components/badge";
 import { PageShell } from "@/components/page-shell";
@@ -53,6 +53,12 @@ export default function RecruiterDashboardPage() {
       icon: Building2
     },
     {
+      href: "/recruiter/team",
+      title: "Team",
+      description: "Roles, interview access, permissions, and governance.",
+      icon: UsersRound
+    },
+    {
       href: "/recruiter/jobs",
       title: "Jobs",
       description: "Published roles, deadlines, applicants, and fit signals.",
@@ -74,7 +80,7 @@ export default function RecruiterDashboardPage() {
       href: "/recruiter/applicants",
       title: "Applicants",
       description: "Explainable AI support with manual decision control.",
-      icon: UsersRound
+      icon: Bot
     }
   ];
 
