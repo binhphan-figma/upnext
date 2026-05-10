@@ -39,6 +39,22 @@ export const prototypePages: PrototypePage[] = [
     status: "Ready for demo"
   },
   {
+    href: "/notifications",
+    title: "Candidate notification center",
+    description:
+      "Candidate updates for interviews, applications, AI feedback, and learning reminders.",
+    owner: "Candidate",
+    status: "Ready for demo"
+  },
+  {
+    href: "/recruiter/messages/nguyen-minh-anh",
+    title: "Recruiter notes",
+    description:
+      "Internal recruiter collaboration thread with safe notes and AI-labeled suggestions.",
+    owner: "Recruiter",
+    status: "Ready for demo"
+  },
+  {
     href: "/candidate/learning-plan",
     title: "Candidate learning plan",
     description: "Weekly skill-building roadmap that turns AI feedback into portfolio evidence.",
@@ -885,4 +901,63 @@ export const publicFaq = [
     answer:
       "Not yet. The current version is a high-fidelity enterprise UI prototype with architecture foundation and mock workflows."
   }
+];
+
+export const candidateNotifications = [
+  {
+    title: "Interview invite ready",
+    message: "NovaTech Labs offered three slots for Frontend Intern — React.",
+    time: "10 minutes ago",
+    status: "Action needed",
+    tone: "amber"
+  },
+  {
+    title: "Application submitted",
+    message: "Your CV snapshot and consent record were attached to the application.",
+    time: "Yesterday",
+    status: "Confirmed",
+    tone: "emerald"
+  },
+  {
+    title: "Learning plan updated",
+    message: "Testing evidence sprint was added based on the React job-fit gap.",
+    time: "2 days ago",
+    status: "New plan",
+    tone: "blue"
+  }
+];
+
+export const notificationPreferences = [
+  "Application status changes",
+  "Interview invites and reminders",
+  "AI feedback updates",
+  "Learning plan deadlines"
+];
+
+export const recruiterMessages = [
+  {
+    author: "Lan Pham",
+    role: "Recruiting lead",
+    note: "Minh Anh has strong React evidence. Please verify Testing Library exposure before shortlist finalization.",
+    time: "09:24"
+  },
+  {
+    author: "AI review assistant",
+    role: "Decision support",
+    note: "Suggested focus: API loading states, accessibility basics, and testing plan. Confidence: medium-high.",
+    time: "09:28"
+  },
+  {
+    author: "Bao Tran",
+    role: "Engineering interviewer",
+    note: "I can take Wednesday afternoon. Add one project walkthrough question to the rubric.",
+    time: "09:41"
+  }
+];
+
+export const recruiterNoteChecklist = [
+  "Mention evidence, not personal assumptions.",
+  "Separate AI suggestions from human decisions.",
+  "Record final status reason before moving stages.",
+  "Keep candidate-facing notes respectful and clear."
 ];

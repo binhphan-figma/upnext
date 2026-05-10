@@ -27,8 +27,8 @@ export default function ApplicantDetailPage() {
         label: "Schedule interview"
       }}
       secondaryAction={{
-        href: "/candidate/applications/frontend-intern-react",
-        label: "Candidate view"
+        href: "/recruiter/messages/nguyen-minh-anh",
+        label: "Open notes"
       }}
     >
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
