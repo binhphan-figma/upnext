@@ -36,7 +36,8 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - Job listing/detail: `/jobs`, `/jobs/frontend-intern-react`.
 - Company listing/detail: `/companies`, `/companies/novatech-labs`.
 - Blog/career content: `/blog`, `/blog/junior-developer-cv-checklist`, `/career-roadmap`.
-- Technical SEO: `/sitemap.xml`, `/robots.txt`, canonical metadata, FAQ structured data.
+- Technical SEO/PWA: `/sitemap.xml`, `/robots.txt`, canonical metadata, FAQ structured data,
+  `/offline`, and safe service worker caching for public pages only.
 - Trust/storytelling pages:
   - `/demo` — route demo bảo vệ tốt nghiệp.
   - `/for-candidates` — landing page public cho candidate.
@@ -134,6 +135,22 @@ Nếu gặp lỗi import từ package generated/domain, chạy lại:
 
 ```bash
 pnpm prepare:generated
+```
+
+Kiểm tra PWA/SEO nhanh sau khi build production:
+
+```bash
+pnpm build
+pnpm --filter @upnext/web start
+```
+
+Mở:
+
+```txt
+http://localhost:3000/manifest.webmanifest
+http://localhost:3000/sitemap.xml
+http://localhost:3000/robots.txt
+http://localhost:3000/offline
 ```
 
 ## 6. Route nên mở để review giao diện nhanh
