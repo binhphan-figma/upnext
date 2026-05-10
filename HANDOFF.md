@@ -38,6 +38,9 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - Blog/career content: `/blog`, `/blog/junior-developer-cv-checklist`, `/career-roadmap`.
 - Trust/storytelling pages:
   - `/demo` — route demo bảo vệ tốt nghiệp.
+  - `/for-candidates` — landing page public cho candidate.
+  - `/for-employers` — landing page public cho recruiter/employer.
+  - `/faq` — FAQ SEO/GEO dạng hỏi đáp.
   - `/trust` — privacy/security/fairness/AI governance.
   - `/ai-transparency` — AI human-in-the-loop explanation.
   - `/design-system` — visual pattern inventory.
@@ -139,12 +142,14 @@ Nên review theo thứ tự này:
 1. `/demo` — kịch bản demo bảo vệ.
 2. `/prototype` — sitemap toàn bộ UI.
 3. `/` — homepage.
-4. `/candidate/cv` — điểm mạnh nhất phía candidate.
-5. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh nhất phía recruiter.
-6. `/trust` và `/ai-transparency` — AI ethics/privacy.
-7. `/design-system` — visual consistency.
-8. `/jobs/frontend-intern-react` — public SEO job detail.
-9. `/admin/ai-logs` — admin AI governance.
+4. `/for-candidates` và `/for-employers` — public conversion pages.
+5. `/candidate/cv` — điểm mạnh nhất phía candidate.
+6. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh nhất phía recruiter.
+7. `/trust` và `/ai-transparency` — AI ethics/privacy.
+8. `/faq` — SEO/GEO FAQ.
+9. `/design-system` — visual consistency.
+10. `/jobs/frontend-intern-react` — public SEO job detail.
+11. `/admin/ai-logs` — admin AI governance.
 
 ## 7. Lệnh kiểm tra chất lượng
 

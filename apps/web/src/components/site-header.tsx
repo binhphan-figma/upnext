@@ -2,15 +2,13 @@ import Link from "next/link";
 
 const navigation = [
   { href: "/jobs", label: "Jobs" },
+  { href: "/for-candidates", label: "Candidates" },
+  { href: "/for-employers", label: "Employers" },
   { href: "/prototype", label: "Prototype" },
-  { href: "/demo", label: "Demo" },
-  { href: "/trust", label: "Trust" },
   { href: "/companies", label: "Companies" },
   { href: "/blog", label: "Guides" },
-  { href: "/candidate", label: "Candidate" },
-  { href: "/recruiter", label: "Recruiter" },
-  { href: "/admin", label: "Admin" },
-  { href: "/notifications", label: "Alerts" }
+  { href: "/trust", label: "Trust" },
+  { href: "/faq", label: "FAQ" }
 ] as const;
 
 export function SiteHeader() {
@@ -41,10 +39,10 @@ export function SiteHeader() {
           ))}
         </div>
         <Link
-          href="/prototype"
+          href="/demo"
           className="rounded-full bg-ink-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
         >
-          View prototype
+          View demo
         </Link>
       </nav>
     </header>

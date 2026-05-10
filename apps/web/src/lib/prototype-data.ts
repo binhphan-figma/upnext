@@ -16,6 +16,28 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/for-candidates",
+    title: "Candidate landing page",
+    description: "Public conversion page explaining CV feedback, matching, and interview coaching.",
+    owner: "Public",
+    status: "Ready for demo"
+  },
+  {
+    href: "/for-employers",
+    title: "Employer landing page",
+    description:
+      "Public conversion page for recruiter copilot, applicant review, and hiring workflow.",
+    owner: "Public",
+    status: "Ready for demo"
+  },
+  {
+    href: "/faq",
+    title: "SEO/GEO FAQ",
+    description: "Question-answer product content optimized for search and AI answer engines.",
+    owner: "Public",
+    status: "Ready for demo"
+  },
+  {
     href: "/demo",
     title: "Guided demo script",
     description:
@@ -470,5 +492,68 @@ export const trustCenterSections = [
   {
     title: "Operational quality",
     items: ["Admin reports queue", "AI usage logs", "Skill taxonomy governance"]
+  }
+];
+
+export const candidateLandingFeatures = [
+  {
+    title: "CV feedback that explains what to improve",
+    detail:
+      "Candidates see strengths, missing skills, better keywords, and next actions before applying."
+  },
+  {
+    title: "Job matching based on skills and evidence",
+    detail: "UpNext compares candidate profiles with job requirements and shows why a role may fit."
+  },
+  {
+    title: "Interview practice for junior IT roles",
+    detail:
+      "The interview coach uses rubrics, sample answers, and learning suggestions for real preparation."
+  }
+];
+
+export const employerLandingFeatures = [
+  {
+    title: "Recruiter copilot for applicant review",
+    detail:
+      "AI summarizes candidate-job fit, evidence, missing signals, and suggested interview questions."
+  },
+  {
+    title: "Structured hiring workflow",
+    detail:
+      "Recruiters manage jobs, applicants, status history, notes, and interview steps from one workspace."
+  },
+  {
+    title: "Human decision control",
+    detail:
+      "AI does not reject candidates. Recruiters remain responsible for status changes and final decisions."
+  }
+];
+
+export const publicFaq = [
+  {
+    question: "What is UpNext?",
+    answer:
+      "UpNext is an AI-powered IT recruitment platform for junior and mid-level candidates, focused on CV feedback, skills-based matching, recruiter decision support, and interview coaching."
+  },
+  {
+    question: "Does UpNext automatically reject candidates?",
+    answer:
+      "No. AI only explains, recommends, summarizes, and coaches. Recruiters remain the final decision makers."
+  },
+  {
+    question: "Who is UpNext for?",
+    answer:
+      "UpNext is designed for IT students, junior developers, mid-level candidates, recruiters, employers, and admins who manage platform quality."
+  },
+  {
+    question: "What makes UpNext different from a normal job board?",
+    answer:
+      "UpNext focuses on skills, evidence, CV snapshots, application workflow, AI transparency, and practical coaching instead of only listing jobs."
+  },
+  {
+    question: "Is the current project production-ready?",
+    answer:
+      "Not yet. The current version is a high-fidelity enterprise UI prototype with architecture foundation and mock workflows."
   }
 ];

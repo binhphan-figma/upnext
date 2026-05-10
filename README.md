@@ -64,6 +64,9 @@ Prototype command center:
 
 - `/prototype` — clickable enterprise UI prototype sitemap.
 - `/demo` — guided graduation defense walkthrough with route sequence and talking points.
+- `/for-candidates` — public landing page for candidate value proposition.
+- `/for-employers` — public landing page for recruiter/employer value proposition.
+- `/faq` — SEO/GEO product FAQ for search and AI answer engines.
 - `/trust` — trust center for privacy, security, fairness, and AI governance.
 - `/ai-transparency` — explicit AI safety and human-in-the-loop explanation page.
 - `/design-system` — reusable UI pattern inventory for enterprise polish.
@@ -102,6 +105,7 @@ Public/product pages:
 
 - `/auth` — demo accounts, roles, permissions, onboarding tasks.
 - `/auth/login`, `/auth/register`, `/auth/onboarding` — account access and role onboarding prototypes.
+- `/for-candidates`, `/for-employers`, `/faq` — public conversion and explanation pages.
 - `/jobs` and `/jobs/frontend-intern-react` — SEO-ready job discovery/detail flow.
 - `/companies` and `/companies/novatech-labs` — company discovery/profile flow.
 - `/blog` and `/blog/junior-developer-cv-checklist` — SEO/GEO career content.
