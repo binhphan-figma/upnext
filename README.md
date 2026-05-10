@@ -61,6 +61,9 @@ pnpm db:validate   # validate Prisma schema
 Prototype command center:
 
 - `/prototype` — clickable enterprise UI prototype sitemap.
+- `/demo` — guided graduation defense walkthrough with route sequence and talking points.
+- `/trust` — trust center for privacy, security, fairness, and AI governance.
+- `/ai-transparency` — explicit AI safety and human-in-the-loop explanation page.
 - `/design-system` — reusable UI pattern inventory for enterprise polish.
 - `/notifications` — notification center with actionable alerts and empty state preview.
 - `/account/settings` — privacy, notification, and AI consent settings prototype.
