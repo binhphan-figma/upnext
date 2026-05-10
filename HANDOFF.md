@@ -24,7 +24,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 ### Foundation
 
 - Khởi tạo monorepo chuẩn: `apps/web`, `apps/api`, `packages/domain`, `packages/database`.
-- Có `DESIGN.md`, README, Prisma schema, `.env.example`, CI quality gates.
+- Có `DESIGN.md`, `DEFENSE.md`, README, Prisma schema, `.env.example`, CI quality gates.
 - Có mock Auth/RBAC demo users:
   - Candidate: `candidate@upnext.dev` / `candidate123`
   - Recruiter: `recruiter@upnext.dev` / `recruiter123`
@@ -39,6 +39,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - Technical SEO/PWA: `/sitemap.xml`, `/robots.txt`, canonical metadata, FAQ structured data,
   `/offline`, and safe service worker caching for public pages only.
 - Trust/storytelling pages:
+  - `/defense` — checklist bảo vệ, demo order, Q&A, scope honesty.
   - `/demo` — route demo bảo vệ tốt nghiệp.
   - `/for-candidates` — landing page public cho candidate.
   - `/for-employers` — landing page public cho recruiter/employer.
@@ -158,16 +159,17 @@ http://localhost:3000/offline
 Nên review theo thứ tự này:
 
 1. `/demo` — kịch bản demo bảo vệ.
-2. `/prototype` — sitemap toàn bộ UI.
-3. `/` — homepage.
-4. `/for-candidates` và `/for-employers` — public conversion pages.
-5. `/candidate/cv` — điểm mạnh nhất phía candidate.
-6. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh nhất phía recruiter.
-7. `/trust` và `/ai-transparency` — AI ethics/privacy.
-8. `/faq` — SEO/GEO FAQ.
-9. `/design-system` — visual consistency.
-10. `/jobs/frontend-intern-react` — public SEO job detail.
-11. `/admin/ai-logs` — admin AI governance.
+2. `/defense` — checklist nói chuyện với hội đồng.
+3. `/prototype` — sitemap toàn bộ UI.
+4. `/` — homepage.
+5. `/for-candidates` và `/for-employers` — public conversion pages.
+6. `/candidate/cv` — điểm mạnh nhất phía candidate.
+7. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh nhất phía recruiter.
+8. `/trust` và `/ai-transparency` — AI ethics/privacy.
+9. `/faq` — SEO/GEO FAQ.
+10. `/design-system` — visual consistency.
+11. `/jobs/frontend-intern-react` — public SEO job detail.
+12. `/admin/ai-logs` — admin AI governance.
 
 ## 7. Lệnh kiểm tra chất lượng
 

@@ -5,6 +5,7 @@ const navigation = [
   { href: "/for-candidates", label: "Candidates" },
   { href: "/for-employers", label: "Employers" },
   { href: "/prototype", label: "Prototype" },
+  { href: "/defense", label: "Defense" },
   { href: "/companies", label: "Companies" },
   { href: "/blog", label: "Guides" },
   { href: "/trust", label: "Trust" },
