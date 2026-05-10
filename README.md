@@ -79,6 +79,7 @@ Candidate prototype pages:
 - `/candidate` — dashboard overview.
 - `/candidate/profile` — structured candidate profile and project evidence.
 - `/candidate/cv` — consent-first AI CV analysis UI.
+- `/candidate/apply/frontend-intern-react` — application submit flow with snapshot and AI consent.
 - `/candidate/job-fit` — candidate-facing job-fit analysis with evidence, gaps, and next actions.
 - `/candidate/learning-plan` — weekly skill-building roadmap based on CV/job-fit gaps.
 - `/candidate/applications` — application tracker and next actions.
@@ -94,6 +95,7 @@ Recruiter prototype pages:
 - `/recruiter/jobs/new` — enterprise job editor/JD builder.
 - `/recruiter/pipeline` — enterprise hiring pipeline board with manual decision controls.
 - `/recruiter/analytics` — funnel quality, fair review, bottleneck, and AI escalation analytics.
+- `/recruiter/interviews/nguyen-minh-anh` — interview scheduling with slots, rubric, and candidate clarity.
 - `/recruiter/applicants` — human-in-the-loop applicant review.
 - `/recruiter/applicants/nguyen-minh-anh` — applicant detail with AI match evidence and interview plan.
 

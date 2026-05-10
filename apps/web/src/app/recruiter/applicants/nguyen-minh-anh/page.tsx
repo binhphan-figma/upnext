@@ -22,7 +22,10 @@ export default function ApplicantDetailPage() {
       icon={UserCheck}
       title={`${applicantDetail.name} review`}
       description={applicantDetail.summary}
-      primaryAction={{ href: "/recruiter/applicants", label: "Back to applicants" }}
+      primaryAction={{
+        href: "/recruiter/interviews/nguyen-minh-anh",
+        label: "Schedule interview"
+      }}
       secondaryAction={{
         href: "/candidate/applications/frontend-intern-react",
         label: "Candidate view"

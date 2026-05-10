@@ -16,11 +16,26 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/candidate/apply/frontend-intern-react",
+    title: "Candidate apply flow",
+    description: "Application submission prototype with CV snapshot, fit preview, and AI consent.",
+    owner: "Candidate",
+    status: "Ready for demo"
+  },
+  {
     href: "/candidate/job-fit",
     title: "Candidate job-fit analysis",
     description:
       "Candidate-facing comparison of matched evidence, skill gaps, readiness, and next actions.",
     owner: "Candidate",
+    status: "Ready for demo"
+  },
+  {
+    href: "/recruiter/interviews/nguyen-minh-anh",
+    title: "Interview scheduling",
+    description:
+      "Recruiter interview scheduling flow with slots, rubric, agenda, and candidate clarity.",
+    owner: "Recruiter",
     status: "Ready for demo"
   },
   {
@@ -488,6 +503,87 @@ export const recruiterInsights = [
   "Node.js role has too many generic applicants; JD should request database project proof.",
   "Manual decision reasons are missing for 8 archived candidates.",
   "Candidate drop-off increases after long screening questionnaires."
+];
+
+export const applicationFlowSteps = [
+  {
+    title: "Confirm profile",
+    detail: "Use the current CV snapshot, skills, portfolio links, and job preferences.",
+    status: "Ready"
+  },
+  {
+    title: "AI fit preview",
+    detail: "Candidate sees matched skills and gaps before submitting.",
+    status: "84% fit"
+  },
+  {
+    title: "Consent",
+    detail: "Candidate explicitly allows AI-assisted summary and recruiter review.",
+    status: "Required"
+  },
+  {
+    title: "Submit",
+    detail: "Application creates a locked CV snapshot and transparent status timeline.",
+    status: "Manual review"
+  }
+];
+
+export const applicationConsentItems = [
+  "Use current CV snapshot for this application only.",
+  "Allow AI to summarize skills, gaps, and suggested interview topics.",
+  "Show recruiter the AI summary together with visible evidence and limitations.",
+  "Do not allow AI to reject, hire, or change application status automatically."
+];
+
+export const applicationPreview = {
+  job: "Frontend Intern — React",
+  company: "NovaTech Labs",
+  cvSnapshot: "React portfolio, REST API project, Tailwind UI, GitHub link, testing gap flagged.",
+  coverNote:
+    "I am applying with a React portfolio and would like to highlight my REST API integration project and recent testing improvement plan.",
+  recruiterWillSee: [
+    "Candidate profile and locked CV snapshot",
+    "Matched evidence and missing signals",
+    "Candidate consent record",
+    "Manual review status history"
+  ]
+};
+
+export const interviewSchedulingFlow = [
+  {
+    step: "Select format",
+    detail: "45-minute technical interview over Google Meet with structured rubric.",
+    owner: "Recruiter"
+  },
+  {
+    step: "Pick slots",
+    detail: "Offer two morning slots and one afternoon backup to reduce candidate friction.",
+    owner: "Recruiter"
+  },
+  {
+    step: "Attach plan",
+    detail:
+      "Include AI-suggested questions, risks to verify, and candidate-visible preparation notes.",
+    owner: "AI + recruiter"
+  },
+  {
+    step: "Send invite",
+    detail: "Candidate receives agenda, evaluation scope, and privacy note before accepting.",
+    owner: "Platform"
+  }
+];
+
+export const interviewSlots = [
+  { time: "Tue 09:30", label: "Best for panel", status: "Recommended" },
+  { time: "Wed 14:00", label: "Candidate-friendly backup", status: "Open" },
+  { time: "Fri 10:30", label: "Final slot before deadline", status: "Open" }
+];
+
+export const interviewRubricPreview = [
+  "React architecture and component trade-offs",
+  "API loading, error, and empty states",
+  "Testing evidence and debugging approach",
+  "Communication clarity and learning mindset"
 ];
 
 export const adminQueues = [

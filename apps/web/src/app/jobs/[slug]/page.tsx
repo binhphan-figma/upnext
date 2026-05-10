@@ -145,10 +145,10 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
               </ul>
             </section>
             <Link
-              href="/candidate"
+              href={`/candidate/apply/${job.slug}`}
               className="inline-flex w-full justify-center rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
             >
-              Practice as candidate
+              Apply with CV snapshot
             </Link>
           </aside>
         </div>
