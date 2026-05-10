@@ -13,6 +13,7 @@ import {
   BriefcaseBusiness,
   Building2,
   FilePenLine,
+  BarChart3,
   MessageSquareText,
   UsersRound
 } from "lucide-react";
@@ -39,6 +40,12 @@ export default function RecruiterDashboardPage() {
   const featuredMatch = featuredJob ? createMatchExplanation(featuredJob) : undefined;
   const recruiterUser = demoUsers.find((user) => user.role === "recruiter");
   const recruiterLinks: WorkspaceLink[] = [
+    {
+      href: "/recruiter/analytics",
+      title: "Analytics",
+      description: "Quality, funnel, fairness, and bottleneck insights.",
+      icon: BarChart3
+    },
     {
       href: "/recruiter/company",
       title: "Company",
