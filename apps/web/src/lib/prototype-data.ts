@@ -16,6 +16,13 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/defense",
+    title: "Graduation defense kit",
+    description: "Presentation checklist, demo order, scope honesty, and reviewer Q&A guidance.",
+    owner: "Public",
+    status: "Ready for demo"
+  },
+  {
     href: "/for-candidates",
     title: "Candidate landing page",
     description: "Public conversion page explaining CV feedback, matching, and interview coaching.",

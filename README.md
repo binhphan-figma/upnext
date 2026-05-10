@@ -2,7 +2,7 @@
 
 UpNext is an AI-powered IT recruitment platform for junior and mid-level hiring. The platform helps candidates improve their CVs and interview skills while helping recruiters screen applicants with transparent, human-in-the-loop AI support.
 
-For the latest project handoff, run instructions, completed scope, and remaining work, see [`HANDOFF.md`](./HANDOFF.md).
+For the latest project handoff, run instructions, completed scope, and remaining work, see [`HANDOFF.md`](./HANDOFF.md). For the presentation guide, see [`DEFENSE.md`](./DEFENSE.md).
 
 ## Product positioning
 
@@ -63,6 +63,7 @@ pnpm db:validate   # validate Prisma schema
 Prototype command center:
 
 - `/prototype` — clickable enterprise UI prototype sitemap.
+- `/defense` — graduation defense checklist, demo order, and scope framing.
 - `/demo` — guided graduation defense walkthrough with route sequence and talking points.
 - `/for-candidates` — public landing page for candidate value proposition.
 - `/for-employers` — public landing page for recruiter/employer value proposition.
