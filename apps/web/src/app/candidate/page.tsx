@@ -62,9 +62,9 @@ export default function CandidateDashboardPage() {
       icon: ClipboardList
     },
     {
-      href: "/candidate/saved-jobs",
-      title: "Saved jobs",
-      description: "Compare fit before applying.",
+      href: "/candidate/job-fit",
+      title: "Job fit",
+      description: "Compare evidence, gaps, and next actions.",
       icon: BookmarkCheck
     }
   ];
