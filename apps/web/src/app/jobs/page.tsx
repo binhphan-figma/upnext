@@ -60,6 +60,20 @@ export default function JobsPage() {
                   </span>
                 ))}
               </div>
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {[
+                  ["High-fit roles", "5"],
+                  ["Verified companies", "12"],
+                  ["AI explanations", "Human-reviewed"]
+                ].map(([label, value]) => (
+                  <div key={label} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
+                      {label}
+                    </p>
+                    <p className="mt-2 text-lg font-semibold text-ink-900">{value}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

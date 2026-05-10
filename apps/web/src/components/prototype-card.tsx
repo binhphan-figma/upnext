@@ -14,6 +14,30 @@ export function SurfaceCard({
   );
 }
 
+export function EnterpriseCallout({
+  title,
+  description,
+  tone = "blue"
+}: {
+  title: string;
+  description: string;
+  tone?: "blue" | "emerald" | "amber" | "slate";
+}) {
+  const toneClass = {
+    blue: "border-blue-100 bg-blue-50 text-brand-950",
+    emerald: "border-emerald-100 bg-emerald-50 text-emerald-950",
+    amber: "border-amber-100 bg-amber-50 text-amber-950",
+    slate: "border-slate-200 bg-slate-50 text-ink-900"
+  }[tone];
+
+  return (
+    <div className={cn("rounded-2xl border p-4", toneClass)}>
+      <p className="font-semibold">{title}</p>
+      <p className="mt-2 text-sm leading-6 opacity-75">{description}</p>
+    </div>
+  );
+}
+
 export function SectionHeading({
   eyebrow,
   title,

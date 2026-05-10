@@ -26,7 +26,7 @@ export function PrototypeShell({
 }: PrototypeShellProps) {
   return (
     <PageShell>
-      <section className="px-6 py-12 lg:px-8">
+      <section className="enterprise-grid px-6 py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <Badge icon={icon}>{badge}</Badge>
           <div className="mt-6 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
@@ -42,6 +42,15 @@ export function PrototypeShell({
               ) : null}
               {primaryAction ? <PrototypeAction action={primaryAction} variant="primary" /> : null}
             </div>
+          </div>
+          <div className="mt-8 grid gap-3 rounded-3xl border border-slate-200 bg-white/80 p-4 text-sm shadow-sm backdrop-blur md:grid-cols-3">
+            {["Responsive prototype", "Human-in-the-loop AI", "Enterprise UX patterns"].map(
+              (item) => (
+                <div key={item} className="rounded-2xl bg-slate-50 px-4 py-3 text-ink-600">
+                  {item}
+                </div>
+              )
+            )}
           </div>
           <div className="mt-10">{children}</div>
         </div>

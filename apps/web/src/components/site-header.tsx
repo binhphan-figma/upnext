@@ -12,9 +12,9 @@ const navigation = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-white/70 bg-white/75 backdrop-blur-xl">
+    <header className="sticky top-0 z-30 border-b border-white/70 bg-white/85 shadow-sm shadow-slate-900/5 backdrop-blur-xl">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+        className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-3 lg:flex-nowrap lg:px-8"
         aria-label="Primary navigation"
       >
         <Link href="/" className="flex items-center gap-3 focus-visible:outline-brand-600">
@@ -26,12 +26,12 @@ export function SiteHeader() {
             <span className="block text-xs leading-4 text-ink-500">AI recruitment platform</span>
           </span>
         </Link>
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="order-3 flex w-full items-center gap-2 overflow-x-auto rounded-full border border-slate-200 bg-slate-50 p-1 md:order-none md:w-auto md:border-0 md:bg-transparent md:p-0">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-ink-500 transition hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
+              className="shrink-0 rounded-full px-3 py-2 text-sm font-medium text-ink-500 transition hover:bg-white hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600 md:px-0 md:py-0 md:hover:bg-transparent"
             >
               {item.label}
             </Link>
@@ -39,7 +39,7 @@ export function SiteHeader() {
         </div>
         <Link
           href="/prototype"
-          className="rounded-full bg-ink-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
+          className="rounded-full bg-ink-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
         >
           View prototype
         </Link>
