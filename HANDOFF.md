@@ -54,6 +54,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - `/candidate/profile` — profile, skills, project evidence.
 - `/candidate/cv` — AI CV feedback, consent, limitations.
 - `/candidate/job-fit` — job-fit analysis, matched evidence, gaps, next actions.
+- `/candidate/learning-plan` — weekly learning roadmap and skill evidence plan.
 - `/candidate/applications` — application tracker.
 - `/candidate/applications/frontend-intern-react` — application detail, CV snapshot, recruiter notes.
 - `/candidate/saved-jobs` — saved jobs.
@@ -66,6 +67,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - `/recruiter/jobs` — job portfolio.
 - `/recruiter/jobs/new` — JD builder UI.
 - `/recruiter/pipeline` — enterprise hiring pipeline board.
+- `/recruiter/analytics` — hiring funnel, quality, fairness, and bottleneck analytics.
 - `/recruiter/applicants` — applicant review.
 - `/recruiter/applicants/nguyen-minh-anh` — applicant detail, AI match evidence, risks, interview plan.
 
@@ -167,13 +169,15 @@ Nên review theo thứ tự này:
 5. `/for-candidates` và `/for-employers` — public conversion pages.
 6. `/candidate/cv` — điểm mạnh phía candidate: AI CV feedback.
 7. `/candidate/job-fit` — so khớp công việc, gap, next action.
-8. `/recruiter/pipeline` — pipeline tuyển dụng kiểu SaaS enterprise.
-9. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh phía recruiter.
-10. `/trust` và `/ai-transparency` — AI ethics/privacy.
-11. `/faq` — SEO/GEO FAQ.
-12. `/design-system` — visual consistency.
-13. `/jobs/frontend-intern-react` — public SEO job detail.
-14. `/admin/ai-logs` — admin AI governance.
+8. `/candidate/learning-plan` — roadmap học tập và bằng chứng kỹ năng.
+9. `/recruiter/pipeline` — pipeline tuyển dụng kiểu SaaS enterprise.
+10. `/recruiter/analytics` — analytics tuyển dụng và fair review.
+11. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh phía recruiter.
+12. `/trust` và `/ai-transparency` — AI ethics/privacy.
+13. `/faq` — SEO/GEO FAQ.
+14. `/design-system` — visual consistency.
+15. `/jobs/frontend-intern-react` — public SEO job detail.
+16. `/admin/ai-logs` — admin AI governance.
 
 ## 7. Lệnh kiểm tra chất lượng
 

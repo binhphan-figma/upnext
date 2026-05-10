@@ -24,6 +24,13 @@ export const prototypePages: PrototypePage[] = [
     status: "Ready for demo"
   },
   {
+    href: "/candidate/learning-plan",
+    title: "Candidate learning plan",
+    description: "Weekly skill-building roadmap that turns AI feedback into portfolio evidence.",
+    owner: "Candidate",
+    status: "Ready for demo"
+  },
+  {
     href: "/defense",
     title: "Graduation defense kit",
     description: "Presentation checklist, demo order, scope honesty, and reviewer Q&A guidance.",
@@ -35,6 +42,14 @@ export const prototypePages: PrototypePage[] = [
     title: "Recruiter pipeline board",
     description:
       "Kanban-style hiring workflow with AI-reviewed stages, evidence cards, and manual controls.",
+    owner: "Recruiter",
+    status: "Ready for demo"
+  },
+  {
+    href: "/recruiter/analytics",
+    title: "Recruiter analytics",
+    description:
+      "Hiring funnel analytics for applicant quality, review speed, fair review coverage, and AI escalation.",
     owner: "Recruiter",
     status: "Ready for demo"
   },
@@ -388,6 +403,91 @@ export const candidateJobFitCards = [
     gaps: ["Cypress", "Test strategy", "CI basics"],
     action: "Complete one Cypress flow and link it from the CV."
   }
+];
+
+export const candidateLearningPlan = [
+  {
+    week: "Week 1",
+    title: "Testing evidence sprint",
+    progress: 72,
+    goal: "Add Testing Library proof to the React portfolio.",
+    tasks: ["Write two component tests", "Capture a test run screenshot", "Add testing notes to CV"]
+  },
+  {
+    week: "Week 2",
+    title: "Accessibility polish",
+    progress: 48,
+    goal: "Show recruiters that UI work includes inclusive design basics.",
+    tasks: [
+      "Audit keyboard navigation",
+      "Fix label/contrast issues",
+      "Document accessibility decisions"
+    ]
+  },
+  {
+    week: "Week 3",
+    title: "Interview storytelling",
+    progress: 36,
+    goal: "Prepare concise project explanations using STAR structure.",
+    tasks: [
+      "Draft React project story",
+      "Practice API loading answer",
+      "Record final 90-second pitch"
+    ]
+  }
+];
+
+export const candidateSkillRoadmap = [
+  { skill: "React fundamentals", status: "Strong", evidence: "Portfolio app, component structure" },
+  { skill: "Testing Library", status: "Needs proof", evidence: "No visible tests in CV snapshot" },
+  { skill: "Accessibility", status: "Emerging", evidence: "Mentioned once, no examples" },
+  {
+    skill: "Deployment",
+    status: "Needs proof",
+    evidence: "Project link exists, pipeline not explained"
+  }
+];
+
+export const recruiterAnalytics = [
+  {
+    label: "Applicant quality",
+    value: "74%",
+    trend: "+8%",
+    insight: "JD rewrite improved skill evidence in incoming applications."
+  },
+  {
+    label: "Time to shortlist",
+    value: "2.4d",
+    trend: "-18%",
+    insight: "Pipeline board makes review bottlenecks visible earlier."
+  },
+  {
+    label: "Fair review coverage",
+    value: "92%",
+    trend: "+11%",
+    insight: "Most reviewed candidates now have recorded human decision reasons."
+  },
+  {
+    label: "AI escalation rate",
+    value: "6%",
+    trend: "-3%",
+    insight: "Low-confidence summaries are routed to manual verification."
+  }
+];
+
+export const recruiterFunnel = [
+  { stage: "Viewed job", count: 1240, conversion: 100 },
+  { stage: "Started application", count: 420, conversion: 34 },
+  { stage: "Submitted", count: 186, conversion: 15 },
+  { stage: "AI reviewed", count: 142, conversion: 11 },
+  { stage: "Shortlisted", count: 34, conversion: 3 }
+];
+
+export const recruiterInsights = [
+  "Frontend Intern role attracts strong React candidates but weak testing evidence.",
+  "Node.js role has too many generic applicants; JD should request database project proof.",
+  "Manual decision reasons are missing for 8 archived candidates.",
+  "Candidate drop-off increases after long screening questionnaires."
 ];
 
 export const adminQueues = [

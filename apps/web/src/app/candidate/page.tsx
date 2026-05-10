@@ -16,6 +16,7 @@ import {
   ClipboardList,
   FileSearch,
   FileText,
+  GraduationCap,
   Target,
   UserRound,
   Video
@@ -43,6 +44,12 @@ export default function CandidateDashboardPage() {
   const match = primaryJob ? createMatchExplanation(primaryJob) : undefined;
   const candidateUser = demoUsers.find((user) => user.role === "candidate");
   const candidateLinks: WorkspaceLink[] = [
+    {
+      href: "/candidate/learning-plan",
+      title: "Learning plan",
+      description: "Turn gaps into weekly portfolio evidence.",
+      icon: GraduationCap
+    },
     {
       href: "/candidate/profile",
       title: "Profile",
