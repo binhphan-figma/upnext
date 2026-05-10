@@ -16,6 +16,21 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/candidate/privacy",
+    title: "Candidate privacy center",
+    description: "Candidate AI consent ledger, data export preview, and revocation principles.",
+    owner: "Candidate",
+    status: "Ready for demo"
+  },
+  {
+    href: "/admin/ai-policies",
+    title: "Admin AI policies",
+    description:
+      "AI governance guardrails for consent, human final decisions, and escalation thresholds.",
+    owner: "Admin",
+    status: "Ready for demo"
+  },
+  {
     href: "/recruiter/company/verification",
     title: "Company verification",
     description:
@@ -1109,3 +1124,68 @@ export const adminCompanyReview = {
     "Escalate to trust lead"
   ]
 };
+
+export const candidateConsentRecords = [
+  {
+    label: "CV feedback",
+    scope: "AI can analyze CV text to generate coaching suggestions.",
+    status: "Enabled",
+    retention: "Delete or refresh when CV snapshot changes"
+  },
+  {
+    label: "Job-fit preview",
+    scope: "AI can compare profile evidence with selected job requirements.",
+    status: "Enabled",
+    retention: "Per-job preview only"
+  },
+  {
+    label: "Application recruiter summary",
+    scope: "AI can summarize matched evidence after candidate submits an application.",
+    status: "Enabled per application",
+    retention: "Stored with application snapshot"
+  },
+  {
+    label: "Interview coaching",
+    scope: "Practice answers can be scored against a role rubric.",
+    status: "Optional",
+    retention: "Candidate-controlled practice history"
+  }
+];
+
+export const candidateDataExportItems = [
+  "Profile and skill evidence",
+  "CV snapshots and AI feedback",
+  "Application history and status timeline",
+  "Consent records and notification preferences"
+];
+
+export const adminAiPolicies = [
+  {
+    policy: "Human final decision",
+    setting: "Required",
+    description: "AI cannot reject, hire, archive, or move candidate stages automatically."
+  },
+  {
+    policy: "Consent before CV analysis",
+    setting: "Required",
+    description: "Candidate must opt in before CV text or interview answers are processed."
+  },
+  {
+    policy: "Low-confidence escalation",
+    setting: "Enabled",
+    description: "Outputs below policy confidence threshold are routed to manual review."
+  },
+  {
+    policy: "Prompt version logging",
+    setting: "Enabled",
+    description:
+      "Every AI output stores feature, prompt version, provider, confidence, and timestamp."
+  }
+];
+
+export const adminAiPolicyThresholds = [
+  { label: "Match summary confidence", value: "70%" },
+  { label: "CV feedback confidence", value: "65%" },
+  { label: "Interview coach confidence", value: "75%" },
+  { label: "Escalation SLA", value: "24h" }
+];

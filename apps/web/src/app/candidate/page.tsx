@@ -17,6 +17,7 @@ import {
   FileSearch,
   FileText,
   GraduationCap,
+  ShieldCheck,
   Target,
   UserRound,
   Video
@@ -73,6 +74,12 @@ export default function CandidateDashboardPage() {
       title: "Job fit",
       description: "Compare evidence, gaps, and next actions.",
       icon: BookmarkCheck
+    },
+    {
+      href: "/candidate/privacy",
+      title: "Privacy",
+      description: "AI consent, data export, and revocation controls.",
+      icon: ShieldCheck
     }
   ];
 

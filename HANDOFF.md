@@ -52,6 +52,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 
 - `/candidate` — dashboard.
 - `/candidate/profile` — profile, skills, project evidence.
+- `/candidate/privacy` — AI consent ledger and data export preview.
 - `/candidate/cv` — AI CV feedback, consent, limitations.
 - `/candidate/apply/frontend-intern-react` — apply flow, CV snapshot, consent.
 - `/candidate/job-fit` — job-fit analysis, matched evidence, gaps, next actions.
@@ -87,6 +88,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - `/admin/skills` — skill taxonomy.
 - `/admin/content` — SEO/GEO content ops.
 - `/admin/ai-logs` — AI audit logs.
+- `/admin/ai-policies` — AI policy guardrails and thresholds.
 
 ### Account / workflow prototype
 
@@ -187,13 +189,15 @@ Nên review theo thứ tự này:
 15. `/recruiter/team` — team permissions và governance.
 16. `/recruiter/company/verification` — employer trust checklist.
 17. `/admin/companies/novatech-labs` — admin company review.
-18. `/notifications` — candidate status clarity.
-19. `/admin/reports/compensation-clarity` — trust case detail.
-20. `/trust` và `/ai-transparency` — AI ethics/privacy.
-21. `/faq` — SEO/GEO FAQ.
-22. `/design-system` — visual consistency.
-23. `/jobs/frontend-intern-react` — public SEO job detail.
-24. `/admin/ai-logs` — admin AI governance.
+18. `/candidate/privacy` — candidate AI consent và data rights.
+19. `/admin/ai-policies` — AI guardrails và escalation thresholds.
+20. `/notifications` — candidate status clarity.
+21. `/admin/reports/compensation-clarity` — trust case detail.
+22. `/trust` và `/ai-transparency` — AI ethics/privacy.
+23. `/faq` — SEO/GEO FAQ.
+24. `/design-system` — visual consistency.
+25. `/jobs/frontend-intern-react` — public SEO job detail.
+26. `/admin/ai-logs` — admin AI governance.
 
 ## 7. Lệnh kiểm tra chất lượng
 

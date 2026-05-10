@@ -78,6 +78,7 @@ Candidate prototype pages:
 
 - `/candidate` — dashboard overview.
 - `/candidate/profile` — structured candidate profile and project evidence.
+- `/candidate/privacy` — AI consent ledger and candidate data export preview.
 - `/candidate/cv` — consent-first AI CV analysis UI.
 - `/candidate/apply/frontend-intern-react` — application submit flow with snapshot and AI consent.
 - `/candidate/job-fit` — candidate-facing job-fit analysis with evidence, gaps, and next actions.
@@ -113,6 +114,7 @@ Admin prototype pages:
 - `/admin/skills` — skill taxonomy management.
 - `/admin/content` — SEO/GEO content operations.
 - `/admin/ai-logs` — AI usage/audit logs.
+- `/admin/ai-policies` — AI guardrails, consent policy, escalation thresholds, and human-decision controls.
 
 Public/product pages:
 
