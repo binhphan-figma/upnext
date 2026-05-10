@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   title: "For Candidates",
   description:
     "UpNext helps junior IT candidates improve CVs, understand job fit, and practice interviews with transparent AI coaching.",
-  alternates: { canonical: "/for-candidates" }
+  alternates: { canonical: "/for-candidates" },
+  openGraph: {
+    title: "For Candidates | UpNext",
+    description:
+      "AI CV feedback, skills-based job matching, and interview coaching for junior IT candidates.",
+    url: "/for-candidates"
+  }
 };
 
 export default function ForCandidatesPage() {

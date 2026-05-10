@@ -17,6 +17,19 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: publicFaq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer
+      }
+    }))
+  };
+
   return (
     <PrototypeShell
       badge="SEO/GEO FAQ"
@@ -26,6 +39,10 @@ export default function FaqPage() {
       primaryAction={{ href: "/for-candidates", label: "For candidates" }}
       secondaryAction={{ href: "/for-employers", label: "For employers" }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
         <SurfaceCard>
           <SectionHeading

@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   title: "For Employers",
   description:
     "UpNext helps recruiters review junior IT candidates with skills-based workflows, explainable AI, and human decision control.",
-  alternates: { canonical: "/for-employers" }
+  alternates: { canonical: "/for-employers" },
+  openGraph: {
+    title: "For Employers | UpNext",
+    description:
+      "Recruiter copilot and applicant review workflow for transparent, human-in-the-loop junior IT hiring.",
+    url: "/for-employers"
+  }
 };
 
 export default function ForEmployersPage() {
