@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { adminQualitySignals, demoUsers, getPermissionsForRole } from "@upnext/domain";
-import { Activity, FileWarning, Newspaper, ShieldCheck, Tags, UsersRound } from "lucide-react";
+import {
+  Activity,
+  FileWarning,
+  Newspaper,
+  ShieldCheck,
+  SlidersHorizontal,
+  Tags,
+  UsersRound
+} from "lucide-react";
 import { Badge } from "@/components/badge";
 import { PageShell } from "@/components/page-shell";
 import { EnterpriseCallout } from "@/components/prototype-card";
@@ -64,6 +72,12 @@ export default function AdminDashboardPage() {
       title: "AI logs",
       description: "Provider, prompt version, confidence, and fallback status.",
       icon: Activity
+    },
+    {
+      href: "/admin/ai-policies",
+      title: "AI policies",
+      description: "Consent, escalation thresholds, and human-decision guardrails.",
+      icon: SlidersHorizontal
     }
   ];
 

@@ -20,7 +20,7 @@ export default function AccountSettingsPage() {
       icon={Settings}
       title="Settings UI for privacy, security, and AI consent."
       description="For a recruitment platform, account settings must make privacy controls and AI consent easy to understand."
-      primaryAction={{ href: "/notifications", label: "View notifications" }}
+      primaryAction={{ href: "/candidate/privacy", label: "Privacy center" }}
       secondaryAction={{ href: "/auth/onboarding", label: "Onboarding" }}
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_380px]">

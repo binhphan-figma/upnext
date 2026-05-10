@@ -32,7 +32,7 @@ export default function AdminAiLogsPage() {
       icon={Activity}
       title="AI logs that make automation transparent and auditable."
       description="Enterprise AI features need provider, prompt version, confidence, limitations, consent, and fallback status visible to admins."
-      primaryAction={{ href: "/admin/reports", label: "Open trust queue" }}
+      primaryAction={{ href: "/admin/ai-policies", label: "Review policies" }}
       secondaryAction={{ href: "/candidate/cv", label: "See CV feedback" }}
     >
       <SurfaceCard>
