@@ -1,0 +1,475 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CANDIDATE
+  RECRUITER
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+  DELETED
+}
+
+enum CompanyStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum JobStatus {
+  DRAFT
+  PUBLISHED
+  CLOSED
+  ARCHIVED
+}
+
+enum EmploymentType {
+  FULL_TIME
+  PART_TIME
+  INTERNSHIP
+  CONTRACT
+  FREELANCE
+}
+
+enum WorkMode {
+  ONSITE
+  HYBRID
+  REMOTE
+}
+
+enum ApplicationStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  SHORTLISTED
+  INTERVIEW_INVITED
+  REJECTED
+  HIRED
+  WITHDRAWN
+}
+
+enum AiSubjectType {
+  CV
+  JOB
+  APPLICATION
+  INTERVIEW_ANSWER
+}
+
+enum BlogPostStatus {
+  DRAFT
+  PUBLISHED
+  SCHEDULED
+  ARCHIVED
+}
+
+enum NotificationStatus {
+  UNREAD
+  READ
+  ARCHIVED
+}
+
+model User {
+  id               String            @id @default(cuid())
+  email            String            @unique
+  passwordHash     String?
+  fullName         String
+  avatarUrl        String?
+  role             UserRole
+  status           UserStatus        @default(ACTIVE)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  candidateProfile CandidateProfile?
+  recruiterProfile RecruiterProfile?
+  notifications    Notification[]
+  auditLogs        AuditLog[]        @relation("ActorAuditLogs")
+  blogPosts        BlogPost[]        @relation("AuthorPosts")
+
+  @@index([role, status])
+}
+
+model CandidateProfile {
+  id             String             @id @default(cuid())
+  userId         String             @unique
+  headline       String?
+  summary        String?
+  phone          String?
+  location       String?
+  githubUrl      String?
+  linkedinUrl    String?
+  portfolioUrl   String?
+  jobPreferences Json?
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  user           User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skills         CandidateSkill[]
+  cvs            CV[]
+  applications   Application[]
+  savedJobs      SavedJob[]
+  interviews     InterviewSession[]
+
+  @@index([location])
+}
+
+model RecruiterProfile {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  companyId String
+  title     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Restrict)
+  jobs      Job[]
+
+  @@index([companyId])
+}
+
+model Company {
+  id                 String             @id @default(cuid())
+  name               String
+  slug               String             @unique
+  logoUrl            String?
+  websiteUrl         String?
+  description        String?
+  industry           String?
+  sizeRange          String?
+  location           String?
+  status             CompanyStatus      @default(PENDING)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  recruiters         RecruiterProfile[]
+  jobs               Job[]
+
+  @@index([status])
+}
+
+model Skill {
+  id               String           @id @default(cuid())
+  name             String           @unique
+  slug             String           @unique
+  category         String?
+  aliases          String[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  jobSkills        JobSkill[]
+  candidateSkills  CandidateSkill[]
+  interviewQuestions InterviewQuestion[]
+}
+
+model CandidateSkill {
+  id                 String           @id @default(cuid())
+  candidateProfileId String
+  skillId            String
+  level              String?
+  yearsOfExperience  Int?
+  evidence           String?
+  createdAt          DateTime         @default(now())
+  candidateProfile   CandidateProfile @relation(fields: [candidateProfileId], references: [id], onDelete: Cascade)
+  skill              Skill            @relation(fields: [skillId], references: [id], onDelete: Restrict)
+
+  @@unique([candidateProfileId, skillId])
+}
+
+model Job {
+  id               String                     @id @default(cuid())
+  companyId        String
+  recruiterId      String
+  title            String
+  slug             String
+  level            String
+  location         String?
+  salaryMin        Int?
+  salaryMax        Int?
+  currency         String                     @default("VND")
+  employmentType   EmploymentType
+  workMode         WorkMode
+  responsibilities String[]
+  requirements     String[]
+  benefits         String[]
+  description      String
+  status           JobStatus                  @default(DRAFT)
+  deadline         DateTime?
+  publishedAt      DateTime?
+  closedAt         DateTime?
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime                   @default(now())
+  updatedAt        DateTime                   @updatedAt
+  company          Company                    @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  recruiter        RecruiterProfile           @relation(fields: [recruiterId], references: [id], onDelete: Restrict)
+  skills           JobSkill[]
+  applications     Application[]
+  savedBy          SavedJob[]
+  matchResults     AIMatchResult[]
+
+  @@unique([companyId, slug])
+  @@index([status, publishedAt])
+  @@index([level, workMode, employmentType])
+}
+
+model JobSkill {
+  id         String   @id @default(cuid())
+  jobId      String
+  skillId    String
+  isRequired Boolean  @default(true)
+  weight     Int      @default(1)
+  job        Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  skill      Skill    @relation(fields: [skillId], references: [id], onDelete: Restrict)
+
+  @@unique([jobId, skillId])
+}
+
+model CV {
+  id                 String           @id @default(cuid())
+  candidateProfileId String
+  fileName           String
+  fileUrl            String
+  mimeType           String
+  fileSizeBytes      Int
+  isPrimary          Boolean          @default(false)
+  createdAt          DateTime         @default(now())
+  candidateProfile   CandidateProfile @relation(fields: [candidateProfileId], references: [id], onDelete: Cascade)
+  versions           CVVersion[]
+
+  @@index([candidateProfileId, isPrimary])
+}
+
+model CVVersion {
+  id             String          @id @default(cuid())
+  cvId           String
+  version        Int
+  extractedText  String?
+  parsedData     Json?
+  aiWarnings     Json?
+  createdAt      DateTime        @default(now())
+  cv             CV              @relation(fields: [cvId], references: [id], onDelete: Cascade)
+  applications   Application[]
+  matchResults   AIMatchResult[]
+
+  @@unique([cvId, version])
+}
+
+model Application {
+  id                 String                     @id @default(cuid())
+  jobId              String
+  candidateProfileId String
+  cvVersionId        String
+  status             ApplicationStatus          @default(SUBMITTED)
+  coverLetter        String?
+  cvSnapshot         Json
+  submittedAt        DateTime                   @default(now())
+  updatedAt          DateTime                   @updatedAt
+  job                Job                        @relation(fields: [jobId], references: [id], onDelete: Restrict)
+  candidateProfile   CandidateProfile           @relation(fields: [candidateProfileId], references: [id], onDelete: Restrict)
+  cvVersion          CVVersion                  @relation(fields: [cvVersionId], references: [id], onDelete: Restrict)
+  statusHistory      ApplicationStatusHistory[]
+  matchResults       AIMatchResult[]
+
+  @@unique([jobId, candidateProfileId])
+  @@index([status, submittedAt])
+}
+
+model ApplicationStatusHistory {
+  id            String            @id @default(cuid())
+  applicationId String
+  fromStatus    ApplicationStatus?
+  toStatus      ApplicationStatus
+  note          String?
+  changedById   String?
+  createdAt     DateTime          @default(now())
+  application   Application       @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId, createdAt])
+}
+
+model AIAnalysis {
+  id            String        @id @default(cuid())
+  subjectType   AiSubjectType
+  subjectId     String
+  provider      String
+  model         String
+  promptVersion String
+  inputHash     String?
+  output        Json
+  confidence    String?
+  warnings      Json?
+  createdAt     DateTime      @default(now())
+
+  @@index([subjectType, subjectId, createdAt])
+}
+
+model AIMatchResult {
+  id                 String      @id @default(cuid())
+  jobId              String
+  cvVersionId        String
+  applicationId      String?
+  overallScore       Int
+  skillScore         Int
+  experienceScore    Int
+  projectScore       Int
+  matchedSkills      Json
+  missingSkills      Json
+  evidence           Json
+  recruiterSummary   String
+  candidateAdvice    String?
+  interviewQuestions Json
+  confidence         String
+  limitations        Json
+  promptVersion      String
+  provider           String
+  model              String
+  createdAt          DateTime    @default(now())
+  job                Job         @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  cvVersion          CVVersion   @relation(fields: [cvVersionId], references: [id], onDelete: Cascade)
+  application        Application? @relation(fields: [applicationId], references: [id], onDelete: SetNull)
+
+  @@index([jobId, overallScore])
+  @@index([applicationId])
+}
+
+model InterviewQuestion {
+  id          String            @id @default(cuid())
+  skillId     String?
+  role        String
+  level       String
+  type        String
+  prompt      String
+  rubric      Json
+  isActive    Boolean           @default(true)
+  createdAt   DateTime          @default(now())
+  skill       Skill?            @relation(fields: [skillId], references: [id], onDelete: SetNull)
+  answers     InterviewAnswer[]
+}
+
+model InterviewSession {
+  id                 String             @id @default(cuid())
+  candidateProfileId String
+  targetRole         String
+  level              String
+  techStack          String[]
+  interviewType      String
+  overallFeedback    Json?
+  createdAt          DateTime           @default(now())
+  completedAt        DateTime?
+  candidateProfile   CandidateProfile   @relation(fields: [candidateProfileId], references: [id], onDelete: Cascade)
+  answers            InterviewAnswer[]
+}
+
+model InterviewAnswer {
+  id          String             @id @default(cuid())
+  sessionId   String
+  questionId  String
+  answerText  String
+  createdAt   DateTime           @default(now())
+  session     InterviewSession   @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  question    InterviewQuestion  @relation(fields: [questionId], references: [id], onDelete: Restrict)
+  feedback    InterviewFeedback?
+}
+
+model InterviewFeedback {
+  id             String          @id @default(cuid())
+  answerId       String          @unique
+  scores         Json
+  feedback       String
+  sampleAnswer   String?
+  learningTips   String[]
+  promptVersion  String
+  provider       String
+  model          String
+  createdAt      DateTime        @default(now())
+  answer         InterviewAnswer @relation(fields: [answerId], references: [id], onDelete: Cascade)
+}
+
+model BlogCategory {
+  id          String     @id @default(cuid())
+  name        String
+  slug        String     @unique
+  description String?
+  posts       BlogPost[]
+}
+
+model BlogTag {
+  id    String        @id @default(cuid())
+  name  String
+  slug  String        @unique
+  posts BlogPostTag[]
+}
+
+model BlogPost {
+  id              String          @id @default(cuid())
+  authorId        String
+  categoryId      String
+  title           String
+  slug            String          @unique
+  excerpt         String
+  content         String
+  coverImageUrl   String?
+  status          BlogPostStatus  @default(DRAFT)
+  metaTitle       String?
+  metaDescription String?
+  readingTime     Int?
+  publishedAt     DateTime?
+  scheduledAt     DateTime?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  author          User            @relation("AuthorPosts", fields: [authorId], references: [id], onDelete: Restrict)
+  category        BlogCategory    @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  tags            BlogPostTag[]
+
+  @@index([status, publishedAt])
+}
+
+model BlogPostTag {
+  postId String
+  tagId  String
+  post   BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    BlogTag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model SavedJob {
+  id                 String           @id @default(cuid())
+  candidateProfileId String
+  jobId              String
+  createdAt          DateTime         @default(now())
+  candidateProfile   CandidateProfile @relation(fields: [candidateProfileId], references: [id], onDelete: Cascade)
+  job                Job              @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([candidateProfileId, jobId])
+}
+
+model Notification {
+  id        String             @id @default(cuid())
+  userId    String
+  title     String
+  body      String
+  status    NotificationStatus @default(UNREAD)
+  metadata  Json?
+  createdAt DateTime           @default(now())
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  action    String
+  entity    String
+  entityId  String?
+  metadata  Json?
+  createdAt DateTime @default(now())
+  actor     User?    @relation("ActorAuditLogs", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([entity, entityId])
+  @@index([actorId, createdAt])
+}

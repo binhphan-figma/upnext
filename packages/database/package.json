@@ -1,0 +1,19 @@
+{
+  "name": "@upnext/database",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "generate": "prisma generate --schema prisma/schema.prisma",
+    "validate": "prisma validate --schema prisma/schema.prisma",
+    "typecheck": "tsc --noEmit",
+    "build": "pnpm generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "prisma": "^6.7.0"
+  }
+}
