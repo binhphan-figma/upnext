@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
-export const createPrismaClient = () => new PrismaClient();
+export function createPrismaClient(): PrismaClient {
+  return new PrismaClient();
+}
 
 export type UpNextDatabaseClient = ReturnType<typeof createPrismaClient>;

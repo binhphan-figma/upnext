@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm --parallel --filter @upnext/web --filter @upnext/api dev",
     "build": "pnpm --filter @upnext/database generate && pnpm -r build",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "pnpm db:generate && eslint . --max-warnings=0",
     "typecheck": "pnpm -r typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
