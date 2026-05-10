@@ -36,6 +36,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - Job listing/detail: `/jobs`, `/jobs/frontend-intern-react`.
 - Company listing/detail: `/companies`, `/companies/novatech-labs`.
 - Blog/career content: `/blog`, `/blog/junior-developer-cv-checklist`, `/career-roadmap`.
+- Technical SEO: `/sitemap.xml`, `/robots.txt`, canonical metadata, FAQ structured data.
 - Trust/storytelling pages:
   - `/demo` — route demo bảo vệ tốt nghiệp.
   - `/for-candidates` — landing page public cho candidate.
