@@ -27,7 +27,7 @@ export default function RecruiterCompanyPage() {
       icon={Building2}
       title="A recruiter profile that builds trust before candidates apply."
       description="Enterprise hiring UX needs company identity, verification, culture, stack, benefits, and job performance in one clear place."
-      primaryAction={{ href: "/recruiter/jobs/new", label: "Create job post" }}
+      primaryAction={{ href: "/recruiter/company/verification", label: "Verify company" }}
       secondaryAction={{ href: "/recruiter/applicants", label: "Review applicants" }}
     >
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">

@@ -92,6 +92,7 @@ Recruiter prototype pages:
 
 - `/recruiter` — recruiter dashboard overview.
 - `/recruiter/company` — employer profile and verification signals.
+- `/recruiter/company/verification` — employer verification checklist and trust evidence.
 - `/recruiter/team` — team access, role scopes, and permission matrix.
 - `/recruiter/jobs` — job portfolio operations.
 - `/recruiter/jobs/new` — enterprise job editor/JD builder.
@@ -105,6 +106,7 @@ Recruiter prototype pages:
 Admin prototype pages:
 
 - `/admin` — admin overview.
+- `/admin/companies/novatech-labs` — admin company verification review with risk checks.
 - `/admin/users` — role-aware account management.
 - `/admin/reports` — trust and safety queues.
 - `/admin/reports/compensation-clarity` — trust case detail with evidence, timeline, and admin actions.

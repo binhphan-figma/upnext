@@ -16,6 +16,22 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/recruiter/company/verification",
+    title: "Company verification",
+    description:
+      "Recruiter-side employer trust checklist for identity, policy, ownership, and review.",
+    owner: "Recruiter",
+    status: "Ready for demo"
+  },
+  {
+    href: "/admin/companies/novatech-labs",
+    title: "Admin company review",
+    description:
+      "Admin verification review with trust checks, risk summary, and moderation actions.",
+    owner: "Admin",
+    status: "Ready for demo"
+  },
+  {
     href: "/recruiter/team",
     title: "Recruiter team permissions",
     description: "Team access, role scopes, interviewer permissions, and least-privilege matrix.",
@@ -1039,3 +1055,57 @@ export const adminTrustActions = [
   "Mark report resolved with admin reason",
   "Escalate repeated issue to company verification review"
 ];
+
+export const companyVerificationSteps = [
+  {
+    title: "Legal identity",
+    detail: "Business name, website, representative email, and tax registration placeholder.",
+    status: "Submitted"
+  },
+  {
+    title: "Hiring policy",
+    detail:
+      "Compensation clarity, internship expectations, mentorship promise, and anti-bias agreement.",
+    status: "Needs edit"
+  },
+  {
+    title: "Recruiter ownership",
+    detail: "Verified recruiting lead and team members with least-privilege access.",
+    status: "Ready"
+  },
+  {
+    title: "Admin review",
+    detail:
+      "Trust team checks documents, public profile, and job posting quality before verification.",
+    status: "Pending"
+  }
+];
+
+export const companyVerificationDocuments = [
+  "Company website and domain ownership",
+  "Business registration placeholder",
+  "Recruiter work email verification",
+  "Hiring policy and compensation disclosure",
+  "Candidate privacy and AI review acknowledgement"
+];
+
+export const adminCompanyReview = {
+  company: "NovaTech Labs",
+  status: "Pending verification",
+  risk: "Medium",
+  summary:
+    "Profile has strong employer-brand content and verified recruiter ownership, but internship compensation disclosure needs one more clarification before verification.",
+  checks: [
+    { label: "Website/domain match", result: "Pass" },
+    { label: "Recruiter work email", result: "Pass" },
+    { label: "Business proof placeholder", result: "Needs manual review" },
+    { label: "Compensation clarity", result: "Needs edit" },
+    { label: "AI/privacy acknowledgement", result: "Pass" }
+  ],
+  actions: [
+    "Request compensation clarification",
+    "Approve with monitoring note",
+    "Reject verification until documents are updated",
+    "Escalate to trust lead"
+  ]
+};
