@@ -2,10 +2,11 @@ import Link from "next/link";
 
 const navigation = [
   { href: "/jobs", label: "Jobs" },
-  { href: "/auth", label: "Auth" },
+  { href: "/prototype", label: "Prototype" },
+  { href: "/companies", label: "Companies" },
+  { href: "/blog", label: "Guides" },
   { href: "/candidate", label: "Candidate" },
   { href: "/recruiter", label: "Recruiter" },
-  { href: "/#mvp", label: "MVP" },
   { href: "/admin", label: "Admin" }
 ] as const;
 
@@ -37,10 +38,10 @@ export function SiteHeader() {
           ))}
         </div>
         <Link
-          href="#mvp"
+          href="/prototype"
           className="rounded-full bg-ink-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
         >
-          Start roadmap
+          View prototype
         </Link>
       </nav>
     </header>
