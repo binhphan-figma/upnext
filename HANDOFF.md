@@ -66,6 +66,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 
 - `/recruiter` — dashboard.
 - `/recruiter/company` — company profile and verification.
+- `/recruiter/company/verification` — employer verification checklist.
 - `/recruiter/team` — team permissions and least-privilege access.
 - `/recruiter/jobs` — job portfolio.
 - `/recruiter/jobs/new` — JD builder UI.
@@ -79,6 +80,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 ### Admin prototype
 
 - `/admin` — operations overview.
+- `/admin/companies/novatech-labs` — company verification review.
 - `/admin/users` — user/RBAC management.
 - `/admin/reports` — trust and safety queues.
 - `/admin/reports/compensation-clarity` — trust case detail and moderation action flow.
@@ -183,13 +185,15 @@ Nên review theo thứ tự này:
 13. `/recruiter/interviews/nguyen-minh-anh` — schedule interview/rubric.
 14. `/recruiter/messages/nguyen-minh-anh` — notes nội bộ và AI-labeled suggestions.
 15. `/recruiter/team` — team permissions và governance.
-16. `/notifications` — candidate status clarity.
-17. `/admin/reports/compensation-clarity` — trust case detail.
-18. `/trust` và `/ai-transparency` — AI ethics/privacy.
-19. `/faq` — SEO/GEO FAQ.
-20. `/design-system` — visual consistency.
-21. `/jobs/frontend-intern-react` — public SEO job detail.
-22. `/admin/ai-logs` — admin AI governance.
+16. `/recruiter/company/verification` — employer trust checklist.
+17. `/admin/companies/novatech-labs` — admin company review.
+18. `/notifications` — candidate status clarity.
+19. `/admin/reports/compensation-clarity` — trust case detail.
+20. `/trust` và `/ai-transparency` — AI ethics/privacy.
+21. `/faq` — SEO/GEO FAQ.
+22. `/design-system` — visual consistency.
+23. `/jobs/frontend-intern-react` — public SEO job detail.
+24. `/admin/ai-logs` — admin AI governance.
 
 ## 7. Lệnh kiểm tra chất lượng
 

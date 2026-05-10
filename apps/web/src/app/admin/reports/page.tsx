@@ -39,6 +39,14 @@ export default function AdminReportsPage() {
                   </span>
                 </div>
                 <p className="mt-4 text-sm leading-6 text-ink-500">Severity: {queue.severity}</p>
+                {queue.label === "Company verification" ? (
+                  <Link
+                    href="/admin/companies/novatech-labs"
+                    className="mt-4 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-950"
+                  >
+                    Review company →
+                  </Link>
+                ) : null}
                 {queue.label === "Reported jobs" ? (
                   <Link
                     href="/admin/reports/compensation-clarity"
