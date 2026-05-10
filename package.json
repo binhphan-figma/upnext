@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm --parallel --filter @upnext/web --filter @upnext/api dev",
     "build": "pnpm --filter @upnext/database generate && pnpm -r build",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "pnpm db:generate && eslint . --max-warnings=0",
     "typecheck": "pnpm -r typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
+    "@next/eslint-plugin-next": "^15.3.2",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react": "^7.37.5",

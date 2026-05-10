@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import nextPlugin from "@next/eslint-plugin-next";
 import prettier from "eslint-config-prettier";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -40,6 +41,7 @@ export default tseslint.config(
       }
     },
     plugins: {
+      "@next/next": nextPlugin,
       react,
       "react-hooks": reactHooks
     },
@@ -52,6 +54,8 @@ export default tseslint.config(
       ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs["core-web-vitals"].rules,
       "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
       "@typescript-eslint/no-floating-promises": "error",
       "@typescript-eslint/no-misused-promises": "error",
