@@ -16,6 +16,21 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/recruiter/team",
+    title: "Recruiter team permissions",
+    description: "Team access, role scopes, interviewer permissions, and least-privilege matrix.",
+    owner: "Recruiter",
+    status: "Ready for demo"
+  },
+  {
+    href: "/admin/reports/compensation-clarity",
+    title: "Admin trust case detail",
+    description:
+      "Reported job case review with evidence, timeline, AI classification, and actions.",
+    owner: "Admin",
+    status: "Ready for demo"
+  },
+  {
     href: "/candidate/apply/frontend-intern-react",
     title: "Candidate apply flow",
     description: "Application submission prototype with CV snapshot, fit preview, and AI consent.",
@@ -960,4 +975,67 @@ export const recruiterNoteChecklist = [
   "Separate AI suggestions from human decisions.",
   "Record final status reason before moving stages.",
   "Keep candidate-facing notes respectful and clear."
+];
+
+export const recruiterTeamMembers = [
+  {
+    name: "Lan Pham",
+    role: "Recruiting lead",
+    access: "Admin",
+    scope: "Company profile, jobs, applicants, analytics, final decisions",
+    status: "Active"
+  },
+  {
+    name: "Bao Tran",
+    role: "Engineering interviewer",
+    access: "Interviewer",
+    scope: "Applicant notes, interview rubric, schedule availability",
+    status: "Active"
+  },
+  {
+    name: "Mai Nguyen",
+    role: "Hiring coordinator",
+    access: "Coordinator",
+    scope: "Interview scheduling, candidate notifications, logistics",
+    status: "Invited"
+  }
+];
+
+export const recruiterPermissionMatrix = [
+  { permission: "Publish jobs", admin: true, interviewer: false, coordinator: false },
+  { permission: "Move pipeline stages", admin: true, interviewer: false, coordinator: false },
+  { permission: "Add interview notes", admin: true, interviewer: true, coordinator: false },
+  { permission: "Schedule interviews", admin: true, interviewer: false, coordinator: true },
+  { permission: "View analytics", admin: true, interviewer: false, coordinator: false }
+];
+
+export const adminTrustCase = {
+  id: "CASE-1048",
+  title: "Reported job: unclear internship compensation",
+  severity: "High",
+  status: "Needs admin decision",
+  reporter: "Candidate report",
+  target: "Frontend Intern — React · NovaTech Labs",
+  summary:
+    "Candidate reported that the job post lists mentorship and benefits but does not clearly state compensation, stipend, or unpaid internship status.",
+  evidence: [
+    "Job page screenshot timestamped May 10",
+    "Candidate report references missing compensation field",
+    "Company profile verified but job content requires clarification",
+    "No prior violations for this employer"
+  ]
+};
+
+export const adminTrustTimeline = [
+  "Report submitted by candidate",
+  "AI classified report as compensation clarity issue",
+  "Admin queue marked severity high because job is public",
+  "Recommended action: request employer edit before approval"
+];
+
+export const adminTrustActions = [
+  "Request employer clarification",
+  "Temporarily hide job from public search",
+  "Mark report resolved with admin reason",
+  "Escalate repeated issue to company verification review"
 ];

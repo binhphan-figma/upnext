@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { FileWarning, ShieldAlert } from "lucide-react";
 import { SectionHeading, SurfaceCard } from "@/components/prototype-card";
 import { PrototypeShell } from "@/components/prototype-shell";
@@ -38,6 +39,14 @@ export default function AdminReportsPage() {
                   </span>
                 </div>
                 <p className="mt-4 text-sm leading-6 text-ink-500">Severity: {queue.severity}</p>
+                {queue.label === "Reported jobs" ? (
+                  <Link
+                    href="/admin/reports/compensation-clarity"
+                    className="mt-4 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-950"
+                  >
+                    Open case detail →
+                  </Link>
+                ) : null}
               </div>
             ))}
           </div>
