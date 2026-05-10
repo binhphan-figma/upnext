@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 const navigation = [
+  { href: "/jobs", label: "Jobs" },
+  { href: "/candidate", label: "Candidate" },
+  { href: "/recruiter", label: "Recruiter" },
   { href: "/#mvp", label: "MVP" },
-  { href: "/#ai-workflow", label: "AI workflow" },
-  { href: "/offline", label: "PWA" }
+  { href: "/admin", label: "Admin" }
 ] as const;
 
 export function SiteHeader() {

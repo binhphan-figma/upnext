@@ -5,11 +5,12 @@
   "packageManager": "pnpm@9.15.1",
   "scripts": {
     "dev": "pnpm --parallel --filter @upnext/web --filter @upnext/api dev",
-    "build": "pnpm --filter @upnext/database generate && pnpm -r build",
-    "lint": "pnpm db:generate && eslint . --max-warnings=0",
-    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm prepare:generated && pnpm -r build",
+    "lint": "pnpm prepare:generated && eslint . --max-warnings=0",
+    "typecheck": "pnpm prepare:generated && pnpm -r typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "prepare:generated": "pnpm --filter @upnext/database generate && pnpm --filter @upnext/domain build",
     "db:generate": "pnpm --filter @upnext/database generate",
     "db:validate": "DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@localhost:5432/upnext?schema=public} pnpm --filter @upnext/database validate"
   },
