@@ -16,10 +16,26 @@ export type PrototypePage = {
 
 export const prototypePages: PrototypePage[] = [
   {
+    href: "/candidate/job-fit",
+    title: "Candidate job-fit analysis",
+    description:
+      "Candidate-facing comparison of matched evidence, skill gaps, readiness, and next actions.",
+    owner: "Candidate",
+    status: "Ready for demo"
+  },
+  {
     href: "/defense",
     title: "Graduation defense kit",
     description: "Presentation checklist, demo order, scope honesty, and reviewer Q&A guidance.",
     owner: "Public",
+    status: "Ready for demo"
+  },
+  {
+    href: "/recruiter/pipeline",
+    title: "Recruiter pipeline board",
+    description:
+      "Kanban-style hiring workflow with AI-reviewed stages, evidence cards, and manual controls.",
+    owner: "Recruiter",
     status: "Ready for demo"
   },
   {
@@ -261,6 +277,116 @@ export const applicantReviewRows = [
     score: 69,
     risk: "Needs clearer JavaScript fundamentals",
     evidence: "Manual QA checklist, Cypress intro project"
+  }
+];
+
+export const recruiterPipelineBoard = [
+  {
+    stage: "New",
+    count: 24,
+    tone: "slate",
+    candidates: [
+      {
+        name: "Le Bao Tram",
+        role: "Frontend Intern — React",
+        score: 72,
+        signal: "Portfolio complete",
+        risk: "Needs clearer teamwork evidence"
+      },
+      {
+        name: "Tran Minh Khoa",
+        role: "QA Automation Intern",
+        score: 68,
+        signal: "Cypress starter project",
+        risk: "Manual QA experience unclear"
+      }
+    ]
+  },
+  {
+    stage: "AI reviewed",
+    count: 18,
+    tone: "blue",
+    candidates: [
+      {
+        name: "Nguyen Minh Anh",
+        role: "Frontend Intern — React",
+        score: 84,
+        signal: "React, REST API, Tailwind UI",
+        risk: "Missing Testing Library proof"
+      },
+      {
+        name: "Pham Gia Huy",
+        role: "Junior Backend Developer — Node.js",
+        score: 76,
+        signal: "Express, PostgreSQL, Prisma basics",
+        risk: "Limited deployment evidence"
+      }
+    ]
+  },
+  {
+    stage: "Shortlisted",
+    count: 7,
+    tone: "emerald",
+    candidates: [
+      {
+        name: "Vo Thanh Truc",
+        role: "QA Automation Intern",
+        score: 79,
+        signal: "Strong testing checklist",
+        risk: "JavaScript depth needs interview check"
+      }
+    ]
+  },
+  {
+    stage: "Interview",
+    count: 5,
+    tone: "amber",
+    candidates: [
+      {
+        name: "Dang Hoang Nam",
+        role: "Junior Backend Developer — Node.js",
+        score: 81,
+        signal: "Good API design explanation",
+        risk: "Verify SQL normalization live"
+      }
+    ]
+  }
+];
+
+export const recruiterDecisionChecklist = [
+  "Review CV evidence and project links before changing status.",
+  "Compare AI summary against the same rubric for every candidate.",
+  "Log a human reason for shortlist, interview, reject, or hold.",
+  "Use AI-generated questions only as preparation support."
+];
+
+export const candidateJobFitCards = [
+  {
+    title: "Frontend Intern — React",
+    company: "NovaTech Labs",
+    fit: 84,
+    readiness: "Apply after adding testing evidence",
+    matched: ["React", "TypeScript", "Tailwind", "REST API"],
+    gaps: ["Testing Library", "Accessibility notes"],
+    action: "Add one test screenshot and describe code review experience."
+  },
+  {
+    title: "Junior Backend Developer — Node.js",
+    company: "BlueBridge Software",
+    fit: 71,
+    readiness: "Save and prepare",
+    matched: ["Node.js", "REST API", "Git"],
+    gaps: ["PostgreSQL", "Prisma", "Deployment"],
+    action: "Build a small CRUD API and document database decisions."
+  },
+  {
+    title: "QA Automation Intern",
+    company: "OrbitWorks",
+    fit: 66,
+    readiness: "Learning path recommended",
+    matched: ["JavaScript", "Bug reports", "Manual QA mindset"],
+    gaps: ["Cypress", "Test strategy", "CI basics"],
+    action: "Complete one Cypress flow and link it from the CV."
   }
 ];
 

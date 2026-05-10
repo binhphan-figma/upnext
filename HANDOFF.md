@@ -53,6 +53,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - `/candidate` — dashboard.
 - `/candidate/profile` — profile, skills, project evidence.
 - `/candidate/cv` — AI CV feedback, consent, limitations.
+- `/candidate/job-fit` — job-fit analysis, matched evidence, gaps, next actions.
 - `/candidate/applications` — application tracker.
 - `/candidate/applications/frontend-intern-react` — application detail, CV snapshot, recruiter notes.
 - `/candidate/saved-jobs` — saved jobs.
@@ -64,6 +65,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - `/recruiter/company` — company profile and verification.
 - `/recruiter/jobs` — job portfolio.
 - `/recruiter/jobs/new` — JD builder UI.
+- `/recruiter/pipeline` — enterprise hiring pipeline board.
 - `/recruiter/applicants` — applicant review.
 - `/recruiter/applicants/nguyen-minh-anh` — applicant detail, AI match evidence, risks, interview plan.
 
@@ -163,13 +165,15 @@ Nên review theo thứ tự này:
 3. `/prototype` — sitemap toàn bộ UI.
 4. `/` — homepage.
 5. `/for-candidates` và `/for-employers` — public conversion pages.
-6. `/candidate/cv` — điểm mạnh nhất phía candidate.
-7. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh nhất phía recruiter.
-8. `/trust` và `/ai-transparency` — AI ethics/privacy.
-9. `/faq` — SEO/GEO FAQ.
-10. `/design-system` — visual consistency.
-11. `/jobs/frontend-intern-react` — public SEO job detail.
-12. `/admin/ai-logs` — admin AI governance.
+6. `/candidate/cv` — điểm mạnh phía candidate: AI CV feedback.
+7. `/candidate/job-fit` — so khớp công việc, gap, next action.
+8. `/recruiter/pipeline` — pipeline tuyển dụng kiểu SaaS enterprise.
+9. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh phía recruiter.
+10. `/trust` và `/ai-transparency` — AI ethics/privacy.
+11. `/faq` — SEO/GEO FAQ.
+12. `/design-system` — visual consistency.
+13. `/jobs/frontend-intern-react` — public SEO job detail.
+14. `/admin/ai-logs` — admin AI governance.
 
 ## 7. Lệnh kiểm tra chất lượng
 

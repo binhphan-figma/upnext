@@ -58,6 +58,12 @@ export default function RecruiterDashboardPage() {
       icon: FilePenLine
     },
     {
+      href: "/recruiter/pipeline",
+      title: "Pipeline",
+      description: "Board view for AI-reviewed hiring stages.",
+      icon: MessageSquareText
+    },
+    {
       href: "/recruiter/applicants",
       title: "Applicants",
       description: "Explainable AI support with manual decision control.",
