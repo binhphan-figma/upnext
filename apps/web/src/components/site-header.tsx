@@ -7,7 +7,8 @@ const navigation = [
   { href: "/blog", label: "Guides" },
   { href: "/candidate", label: "Candidate" },
   { href: "/recruiter", label: "Recruiter" },
-  { href: "/admin", label: "Admin" }
+  { href: "/admin", label: "Admin" },
+  { href: "/notifications", label: "Alerts" }
 ] as const;
 
 export function SiteHeader() {

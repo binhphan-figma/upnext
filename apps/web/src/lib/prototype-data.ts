@@ -37,6 +37,13 @@ export const prototypePages: PrototypePage[] = [
     status: "Ready for demo"
   },
   {
+    href: "/candidate/applications/frontend-intern-react",
+    title: "Application detail",
+    description: "Status history, CV snapshot, recruiter notes, and candidate next actions.",
+    owner: "Candidate",
+    status: "Ready for demo"
+  },
+  {
     href: "/candidate/interview-coach",
     title: "Interview coach",
     description: "Text interview practice, rubric scoring, improved answer, and learning plan.",
@@ -47,6 +54,14 @@ export const prototypePages: PrototypePage[] = [
     href: "/recruiter/jobs",
     title: "Recruiter jobs",
     description: "Job portfolio, publication state, applicants, and performance signals.",
+    owner: "Recruiter",
+    status: "Ready for demo"
+  },
+  {
+    href: "/recruiter/applicants/nguyen-minh-anh",
+    title: "Applicant detail",
+    description:
+      "Candidate evidence, AI match explanation, interview plan, and manual decision UI.",
     owner: "Recruiter",
     status: "Ready for demo"
   },
@@ -77,6 +92,20 @@ export const prototypePages: PrototypePage[] = [
     description: "SEO-ready employer profile cards and hiring signals for candidates.",
     owner: "Public",
     status: "Ready for demo"
+  },
+  {
+    href: "/auth/login",
+    title: "Login prototype",
+    description: "Enterprise auth form, role-aware demo credentials, and security hints.",
+    owner: "Public",
+    status: "Prototype"
+  },
+  {
+    href: "/auth/onboarding",
+    title: "Onboarding prototype",
+    description: "Role-specific setup checklist for candidates, recruiters, and admins.",
+    owner: "Public",
+    status: "Prototype"
   },
   {
     href: "/blog",
@@ -247,3 +276,89 @@ export const blogPosts = [
       "How recruiters can evaluate junior talent fairly using skills, projects, evidence, and structured interview rubrics."
   }
 ];
+
+export const accountSecurityChecklist = [
+  "Use strong password and secure session storage in production.",
+  "Enable role-based redirects after login.",
+  "Show privacy notice before CV upload or AI processing.",
+  "Audit high-risk admin and recruiter actions."
+];
+
+export const onboardingSteps = [
+  {
+    role: "candidate",
+    title: "Candidate onboarding",
+    steps: ["Complete profile", "Upload CV with AI consent", "Save 3 jobs", "Practice interview"]
+  },
+  {
+    role: "recruiter",
+    title: "Recruiter onboarding",
+    steps: ["Verify company", "Draft first job", "Review rubric", "Invite first candidate"]
+  },
+  {
+    role: "admin",
+    title: "Admin onboarding",
+    steps: ["Review reports", "Audit AI logs", "Normalize skills", "Approve companies"]
+  }
+];
+
+export const notifications = [
+  {
+    title: "NovaTech moved your application to shortlist",
+    detail: "Prepare a 5-minute React portfolio walkthrough before the interview invite.",
+    time: "10 min ago",
+    tone: "emerald"
+  },
+  {
+    title: "AI CV feedback is ready",
+    detail: "Testing evidence and accessibility keywords are still missing from your CV.",
+    time: "1 hour ago",
+    tone: "blue"
+  },
+  {
+    title: "Recruiter review required",
+    detail: "Three candidates have medium-confidence AI match results and need manual review.",
+    time: "Today",
+    tone: "amber"
+  }
+] as const;
+
+export const applicationDetail = {
+  title: "Frontend Intern — React",
+  company: "NovaTech Labs",
+  status: "shortlisted" as ApplicationStatus,
+  submittedAt: "May 08, 2026",
+  cvSnapshot: "CV version 3 · React frontend focus · AI consent confirmed",
+  timeline: [
+    "Application submitted with CV snapshot",
+    "AI match explanation generated for recruiter",
+    "Recruiter manually moved application to shortlist",
+    "Candidate should prepare portfolio walkthrough"
+  ],
+  recruiterNotes: [
+    "Strong React/Tailwind portfolio evidence.",
+    "Ask about API error handling and testing plan.",
+    "Do not treat AI score as final decision."
+  ]
+};
+
+export const applicantDetail = {
+  name: "Nguyen Minh Anh",
+  role: "Frontend Intern — React",
+  score: 84,
+  confidence: "Medium",
+  summary:
+    "Good junior frontend signal with visible React projects, Tailwind usage, and GitHub evidence. Needs manual verification for testing depth.",
+  evidence: ["React portfolio", "REST API integration", "Responsive Tailwind components"],
+  risks: [
+    "Limited testing proof",
+    "No accessibility checklist shown",
+    "Deployment process unclear"
+  ],
+  interviewPlan: [
+    "Walk through one React component architecture decision.",
+    "Explain API loading, empty, and error states.",
+    "Describe how they would test a form-heavy page.",
+    "Ask what accessibility improvements they would add."
+  ]
+};
