@@ -5,7 +5,9 @@ import {
   applications,
   candidateSnapshot,
   createMatchExplanation,
-  getApplicationJob
+  demoUsers,
+  getApplicationJob,
+  getPermissionsForRole
 } from "@upnext/domain";
 import { ArrowRight, BookOpenCheck, FileText, Target, Video } from "lucide-react";
 import { Badge } from "@/components/badge";
@@ -27,6 +29,7 @@ export default function CandidateDashboardPage() {
   const primaryApplication = applications[0];
   const primaryJob = primaryApplication ? getApplicationJob(primaryApplication) : undefined;
   const match = primaryJob ? createMatchExplanation(primaryJob) : undefined;
+  const candidateUser = demoUsers.find((user) => user.role === "candidate");
 
   return (
     <PageShell>
@@ -43,6 +46,12 @@ export default function CandidateDashboardPage() {
                 {candidateSnapshot.headline}. Your next best action is to strengthen testing
                 evidence before applying to more frontend roles.
               </p>
+              {candidateUser ? (
+                <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm leading-6 text-brand-700">
+                  Signed in as {candidateUser.email}. Permissions:{" "}
+                  {getPermissionsForRole(candidateUser.role).join(", ")}.
+                </div>
+              ) : null}
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 <ActionCard
                   icon={Target}

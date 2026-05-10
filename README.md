@@ -29,6 +29,7 @@ apps/
   api/      Express API
 packages/
   database/ Prisma schema and database client
+  domain/   Shared demo data, role permissions, and business rules
 DESIGN.md  Product/design-system/UX/AI/SEO/GEO/PWA guidance
 ```
 
@@ -37,7 +38,7 @@ DESIGN.md  Product/design-system/UX/AI/SEO/GEO/PWA guidance
 ```bash
 pnpm install
 cp .env.example .env
-pnpm db:generate
+pnpm prepare:generated
 pnpm dev
 ```
 
@@ -51,8 +52,33 @@ pnpm dev           # run web and API in parallel
 pnpm lint          # lint all workspaces
 pnpm typecheck     # TypeScript checks
 pnpm build         # Prisma generate + app builds
+pnpm prepare:generated
 pnpm db:validate   # validate Prisma schema
 ```
+
+## Demo routes and accounts
+
+Public/product demo pages:
+
+- `/auth` — demo accounts, roles, permissions, onboarding tasks.
+- `/jobs` and `/jobs/frontend-intern-react` — SEO-ready job discovery/detail flow.
+- `/candidate`, `/recruiter`, `/admin` — role-aware dashboard starter flows.
+
+Demo API endpoints:
+
+- `GET /auth/demo-accounts`
+- `POST /auth/login`
+- `POST /auth/register`
+- `GET /auth/me`
+- `GET /jobs`
+- `GET /applications`
+- `GET /ai/match-preview/frontend-intern-react`
+
+Demo credentials:
+
+- Candidate: `candidate@upnext.dev` / `candidate123`
+- Recruiter: `recruiter@upnext.dev` / `recruiter123`
+- Admin: `admin@upnext.dev` / `admin123`
 
 ## MVP roadmap
 
