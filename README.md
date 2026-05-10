@@ -58,11 +58,43 @@ pnpm db:validate   # validate Prisma schema
 
 ## Demo routes and accounts
 
-Public/product demo pages:
+Prototype command center:
+
+- `/prototype` — clickable enterprise UI prototype sitemap.
+
+Candidate prototype pages:
+
+- `/candidate` — dashboard overview.
+- `/candidate/profile` — structured candidate profile and project evidence.
+- `/candidate/cv` — consent-first AI CV analysis UI.
+- `/candidate/applications` — application tracker and next actions.
+- `/candidate/saved-jobs` — saved jobs comparison.
+- `/candidate/interview-coach` — text interview coach with rubric feedback.
+
+Recruiter prototype pages:
+
+- `/recruiter` — recruiter dashboard overview.
+- `/recruiter/company` — employer profile and verification signals.
+- `/recruiter/jobs` — job portfolio operations.
+- `/recruiter/jobs/new` — enterprise job editor/JD builder.
+- `/recruiter/applicants` — human-in-the-loop applicant review.
+
+Admin prototype pages:
+
+- `/admin` — admin overview.
+- `/admin/users` — role-aware account management.
+- `/admin/reports` — trust and safety queues.
+- `/admin/skills` — skill taxonomy management.
+- `/admin/content` — SEO/GEO content operations.
+- `/admin/ai-logs` — AI usage/audit logs.
+
+Public/product pages:
 
 - `/auth` — demo accounts, roles, permissions, onboarding tasks.
 - `/jobs` and `/jobs/frontend-intern-react` — SEO-ready job discovery/detail flow.
-- `/candidate`, `/recruiter`, `/admin` — role-aware dashboard starter flows.
+- `/companies` and `/companies/novatech-labs` — company discovery/profile flow.
+- `/blog` and `/blog/junior-developer-cv-checklist` — SEO/GEO career content.
+- `/career-roadmap` — student-to-junior-developer roadmap.
 
 Demo API endpoints:
 
