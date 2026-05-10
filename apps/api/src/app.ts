@@ -5,7 +5,9 @@ import { errorHandler } from "./common/middleware/error-handler";
 import { requestLogger } from "./common/middleware/request-logger";
 import { env } from "./config/env";
 import { aiRouter } from "./modules/ai/ai.routes";
+import { applicationsRouter } from "./modules/applications/applications.routes";
 import { healthRouter } from "./modules/health/health.routes";
+import { jobsRouter } from "./modules/jobs/jobs.routes";
 
 export function createApp() {
   const app = express();
@@ -17,6 +19,8 @@ export function createApp() {
 
   app.use("/health", healthRouter);
   app.use("/ai", aiRouter);
+  app.use("/jobs", jobsRouter);
+  app.use("/applications", applicationsRouter);
 
   app.use(errorHandler);
 

@@ -43,6 +43,9 @@ importers:
       "@upnext/database":
         specifier: workspace:*
         version: link:../../packages/database
+      "@upnext/domain":
+        specifier: workspace:*
+        version: link:../../packages/domain
       cors:
         specifier: ^2.8.5
         version: 2.8.6
@@ -74,6 +77,9 @@ importers:
 
   apps/web:
     dependencies:
+      "@upnext/domain":
+        specifier: workspace:*
+        version: link:../../packages/domain
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -124,6 +130,12 @@ importers:
       prisma:
         specifier: ^6.7.0
         version: 6.19.3(typescript@5.9.3)
+
+  packages/domain:
+    devDependencies:
+      "@types/node":
+        specifier: ^22.15.17
+        version: 22.19.18
 
 packages:
   "@alloc/quick-lru@5.2.0":
