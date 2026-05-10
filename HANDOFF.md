@@ -53,6 +53,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - `/candidate` — dashboard.
 - `/candidate/profile` — profile, skills, project evidence.
 - `/candidate/cv` — AI CV feedback, consent, limitations.
+- `/candidate/apply/frontend-intern-react` — apply flow, CV snapshot, consent.
 - `/candidate/job-fit` — job-fit analysis, matched evidence, gaps, next actions.
 - `/candidate/learning-plan` — weekly learning roadmap and skill evidence plan.
 - `/candidate/applications` — application tracker.
@@ -68,6 +69,7 @@ UpNext là prototype nền tảng tuyển dụng IT dùng AI cho junior/mid-leve
 - `/recruiter/jobs/new` — JD builder UI.
 - `/recruiter/pipeline` — enterprise hiring pipeline board.
 - `/recruiter/analytics` — hiring funnel, quality, fairness, and bottleneck analytics.
+- `/recruiter/interviews/nguyen-minh-anh` — interview scheduling and rubric preview.
 - `/recruiter/applicants` — applicant review.
 - `/recruiter/applicants/nguyen-minh-anh` — applicant detail, AI match evidence, risks, interview plan.
 
@@ -168,16 +170,18 @@ Nên review theo thứ tự này:
 4. `/` — homepage.
 5. `/for-candidates` và `/for-employers` — public conversion pages.
 6. `/candidate/cv` — điểm mạnh phía candidate: AI CV feedback.
-7. `/candidate/job-fit` — so khớp công việc, gap, next action.
-8. `/candidate/learning-plan` — roadmap học tập và bằng chứng kỹ năng.
-9. `/recruiter/pipeline` — pipeline tuyển dụng kiểu SaaS enterprise.
-10. `/recruiter/analytics` — analytics tuyển dụng và fair review.
-11. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh phía recruiter.
-12. `/trust` và `/ai-transparency` — AI ethics/privacy.
-13. `/faq` — SEO/GEO FAQ.
-14. `/design-system` — visual consistency.
-15. `/jobs/frontend-intern-react` — public SEO job detail.
-16. `/admin/ai-logs` — admin AI governance.
+7. `/candidate/apply/frontend-intern-react` — apply flow có consent/snapshot.
+8. `/candidate/job-fit` — so khớp công việc, gap, next action.
+9. `/candidate/learning-plan` — roadmap học tập và bằng chứng kỹ năng.
+10. `/recruiter/pipeline` — pipeline tuyển dụng kiểu SaaS enterprise.
+11. `/recruiter/analytics` — analytics tuyển dụng và fair review.
+12. `/recruiter/applicants/nguyen-minh-anh` — điểm mạnh phía recruiter.
+13. `/recruiter/interviews/nguyen-minh-anh` — schedule interview/rubric.
+14. `/trust` và `/ai-transparency` — AI ethics/privacy.
+15. `/faq` — SEO/GEO FAQ.
+16. `/design-system` — visual consistency.
+17. `/jobs/frontend-intern-react` — public SEO job detail.
+18. `/admin/ai-logs` — admin AI governance.
 
 ## 7. Lệnh kiểm tra chất lượng
 
