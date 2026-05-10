@@ -2,6 +2,8 @@
 
 UpNext is an AI-powered IT recruitment platform for junior and mid-level hiring. The platform helps candidates improve their CVs and interview skills while helping recruiters screen applicants with transparent, human-in-the-loop AI support.
 
+For the latest project handoff, run instructions, completed scope, and remaining work, see [`HANDOFF.md`](./HANDOFF.md).
+
 ## Product positioning
 
 UpNext is not a generic job board. It is a skills-based recruitment workflow where AI acts as:
